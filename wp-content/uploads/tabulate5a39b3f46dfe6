@@ -1,0 +1,99 @@
+id_campus,nome,cnpj,endereço,bairro,cep,telefone1,telefone2,mail,estacionamento,financiamento,status,id_instituicao,id_cidade
+,FICA – Sede,01.981.577/0001-94,"Al. Dr. Muricy, 707",Centro,80020-040,(41) 3222-2826,,,Não possui,ProUni,A,1,3288
+,UNIBRASIL – Sede,02.741.457/0001-82," Rua Konrad Adenauer, 442",Tarumã,82821-020,(41) 3361-4200,,,Grátis,"Fies, ProUni, Próprio, PraValer",A,2,3288
+,UNIANDRADE – Muricy,79.732.194/0001-70,"Al. Dr. Muricy, 706",Centro,80010-120,(41) 3012-3350,,,Não possui,"Fies, ProUni",A,3,3288
+,UNIANDRADE – Sede,79.732.194/0001-70,"Rua João Scuissiato, 01",Santa Quitéria,81220-090,(41) 3219-4290,,,Grátis,"Fies, ProUni",A,3,3288
+,UNICURITIBA – Sede,76.534.924/0001-30,"Rua Chile, 1678",Rebouças,80220-181,(41) 3213-8700,,centralatendimento@unicuritiba.edu.br,Pago,"Fies, ProUni, Próprio",A,4,3288
+,UNICESUMAR – Curitiba,79.265.617/0001-99,"Rua Itajubá, 673",Portão,81070-190,(41) 3389-7000,,,Grátis,"Fies, ProNatec, ProUni,",A,5,3288
+,UNICESUMAR – Centro,79.265.617/0001-99,"Rua Dr. Pedrosa, 55",Centro,80420-120,(41) 3042-7520,,,Não possui,"Fies, ProNatec, ProUni,",A,5,3288
+,UNICESUMAR – Novo Mundo,79.265.617/0001-99,"Av. República Argentina, 5098",Novo Mundo,81050-001,(41) 3049-7020,,,Não possui,"Fies, ProNatec, ProUni,",A,5,3288
+,UNINTER – Sítio Cercado,02.261.854/0001-57,"Rua Urai,78",Sítio Cercado,81900-320,(41) 3563-1313,(41) 3349-7099 / 0800 702 0500,polocuritibasitiocercado@uninter.com,Não possui,"Fies, ProUni, Bradesco",A,6,3288
+,UNINTER – CIC,02.261.854/0001-57,"Rua João Bettega,6100",Cidade Industrial de Curitiba,81350-274,(41) 3229-0700,0800 702 0500,polocuritibacic@uninter.com ,Grátis,"Fies, ProUni, Bradesco",A,6,3288
+,UNINTER – Uberaba,02.261.854/0001-57,"Av. Coronel Francisco Heráclito dos Santos, 2801",Jardim das Américas,81530-001,(41) 3044-7708,(41) 9 9687-9057 / 0800 702 0500,polocuritibauberaba@uninter.com ,Não possui,"Fies, ProUni, Bradesco",A,6,3288
+,UNINTER – Carlos Gomes,02.261.854/0001-57,"Rua Pedro Ivo, 504",Centro,80010-020,(41) 3595-8100,(41) 3595-8101 / 0800 702 0500,polocuritibacarlosgomes@uninter.com,Conveniado,"Fies, ProUni, Bradesco",A,6,3288
+,UNINTER – Garcez,02.261.854/0001-57,"Av. Luiz Xavier, 103 – 2º andar",Centro,80020-020,(41) 2102-3433,(41) 2102-3455 / 0800 702 0500,polocuritibagarcez@uninter.com,Não possui,"Fies, ProUni, Bradesco",A,6,3288
+,UNINTER – Catedral,02.261.854/0001-57,"Rua José Bonifácio, 15",Centro,80020-130,(41) 3322-9544,0800 702 0500,polocuritibacentrocatedral@uninter.com,Não possui,"Fies, ProUni, Bradesco",A,6,3288
+,UNINTER – Divina,02.261.854/0001-57,Rua do Rosário 147,Centro,80020-110,(41) 2102-4917,0800 702 0500,tiradentes@cbed.com.br,Não possui,"Fies, ProUni, Bradesco",A,6,3288
+,UNINTER – Treze de Maio,02.261.854/0001-57,"Rua Treze de Maio, 538",São Francisco,80510-030,(41) 2102-2600,0800 702 0500,,Grátis,"Fies, ProUni, Bradesco",A,6,3288
+,UNINTER – Araucária,02.261.854/0001-57,"Rua Fernando Suckow, 475 – A",Centro,83702-200,(41) 3031-1271,0800 702 0500,poloaraucaria@uninter.com,Grátis,"Fies, ProUni, Bradesco",A,6,3216
+,UNINTER – São José dos Pinhais,02.261.854/0001-57,"Rua Barão do Cerro Azul, 761",Centro,83005-430,(41) 3035-4119,0800 702 0500,polosaojosedospinhaiscentro@uninter.com,Grátis,"Fies, ProUni, Bradesco",A,6,3544
+,UNINTER – Pinhais,02.261.854/0001-57,"Rua Rolândia, 1293",Alto Tarumã,83325-323,(41) 3403-0872,(41) 9 9566-3598 / 0800 702 0500,polopinhais@uninter.com,Grátis,"Fies, ProUni, Bradesco",A,6,3459
+,UNINTER – Colombo,02.261.854/0001-57,"Rua da Pedreira, 1291",Campo Pequeno,83404-010,(41) 3606-3880,(41) 9 9675-3113 / 0800 702 0500,polocolombo@uninter.com ,Grátis,"Fies, ProUni, Bradesco",A,6,3273
+,UNINTER – Almirante Tamandaré,02.261.854/0001-57,"Av. Emílio Johnson, 65",Vila Santa Terezinha,83501-000,(41) 3047-1745,0800 702 0500,poloalmirantetamandare@uninter.com,Não informado,"Fies, ProUni, Bradesco",A,6,3198
+,UNINTER – Campo Largo,02.261.854/0001-57,"Av. dos Expedicionários, 3135",Bom Jesus,83604-360,(41) 3032-4344,(41) 9 9911-0954 / 0800 702 0500,polocampolargo@uninter.com,Não possui,"Fies, ProUni, Bradesco",A,6,3253
+,UNINETR – Campo Magro,02.261.854/0001-57,"Rua Irmã Maria Elise Bosa, 46",Novos Horizontes,83535-000,(41) 3677-2141,(41) 9 9635-0153 / 0800 702 0500,polocampomagro@uninter.com,Não informado,"Fies, ProUni, Bradesco",A,6,3254
+,UNINTER – Piraquara,02.261.854/0001-57,"Rua Adélio Gomes de Aguiar, 123 ",Jardim Bom Jesus dos Passos,83301-580,(41) 3673-9083,(41) 9 8835-3948 / 0800 702 0500,polopiraquara@uninter.com,Não possui,"Fies, ProUni, Bradesco",A,6,3464
+,UNINTER – Campina Grande do Sul,02.261.854/0001-57,"Rua Alderico Bandeira de Lima, 1020",Jardim Paulista,83430-000,(41) 3679-7211,(41) 9 9134-7838 / 0800 702 0500,polocampinagrandedosul@uninter.com,Grátis,"Fies, ProUni, Bradesco",A,6,3250
+,UNISOCIESC – Pinheirinho,84.684.182/0001-57,"BR 116 Km 106, 18805, Linha Verde",Pinheirinho,81690-300,(41) 3090-9090,,,Grátis,"Fies, ProUni, Juro Zero, Bolsa Atleta, Garantia Estudantil",A,7,3288
+,UNISOCIESC – Palácio Avenida,84.684.182/0001-57,Rua Luis Xavier 40,Centro,80020-020,(41) 3012-1434  ,,,Conveniado,"Fies, ProUni, Juro Zero, Bolsa Atleta, Garantia Estudantil",A,7,3288
+,ESIC – Hauer,04.730.949/0001-06,"R. Padre Dehon, 814",Hauer,81630-090,(41) 3376-1417,,esic@esic.br,Grátis,"Fies, ProUni",A,8,3288
+,FAESP – CIC,81.908.386/0001-36,"Rua Pedro Gusso, 4150",Cidade Industrial de Curitiba,81315-000,(41) 3069 4040,(41) 99813 9361,anchieta@faculdadeanchieta.edu.br,Não informado,ProUni,A,9,3288
+,FAESP – Boqueirão,81.908.386/0001-36,"Rua Tenente Tito Teixeira de Castro, 1222",Boqueirão,81670-430 ,(41) 3123 7500,(41) 98770 3654,anchieta@faculdadeanchieta.edu.br,Não informado,ProUni,A,9,3288
+,FCC – Centro,84.835.941/0001-35,"Rua Presidente Faria, 275",Centro,80020-290,(41) 3232-3711,,,Conveniado,Não informado,A,10,3288
+,FAC – Água Verde,01.711.282/0001-06,"Av. República Argentina, 1.285",Água Verde,80620-010,(41) 3089-5050,,,Não possui,"Fies, ProUni, PraValer",A,11,3288
+,FACEL – Centro,77.387.363/0001-56,"Rua Pedro Ivo, 750",Centro,80010-020,(41) 3087-3650,,atendimento@facel.com.br,Não possui,Não informado,A,12,3288
+,FESPPR – Centro,76.602.895/0001-04,"Rua Dr. Faivre, 141",Centro,80060-140,(41) 3028-6500,(41) 3028-6515,,Não informado,Fies,A,13,3288
+,CETEP – Sede,05.209.811/0001-10,"Rua Francisco Torres, 768",Centro,80060-130,(41) 3362-1705,,,Conveniado,Não informado,A,14,3288
+,FATECPR – Sede,04.972.854/0001-90,"Rua Itacolomi, 450",Portão,81070-150,(41) 3246-7722 ,,secretaria@fatecpr.edu.br,Não possui,"Fies, ProUni",A,15,3288
+,FATEC FUTURO – Sede,05.777.035/0001-55,"Rua Alferes Poli, 1116",Rebouças,80230-090,(41) 3333-0212,(41) 9 9782-0004 / (41) 9 9782-0003,secgeral@faculdadefuturo.com.br,Grátis,Não informado,A,16,3288
+,FAITEC – Sede,05.643.584/0001-37,"Rua Voluntários da Pátria, 215 - 2º andar",Centro,80020-000,(41) 3225-1844,(41) 9 8806-8722 / (41) 9 8806-9189,ibrate@ibrate.edu.br,Não possui,Não informado,A,17,3288
+,IPPEO – Sede,05.794.280/0001-70,"Rua José Loureiro, 347 - 2º andar Galeria Suíça",Centro,80010-000,(41) 3223-2587,(41) 3322-2026,secretaria@faculdadeippeo.edu.br,Não possui,Não oferece,A,18,3288
+,UNIDOM BOSCO – Marumby,02.797.469/0001-29,"Av. Presidente Wenceslau Braz, 1172",Guaíra,81010-000,(41) 3213-5200,0800 088 5200,relacionamento@dombosco.sebsa.com.br,Grátis,"Fies, ProUni, Próprio",A,19,3288
+,UNIDOM BOSCO – Mercês,02.797.469/0001-29,"Av. Manoel Ribas, 2181",Mercês,80710-010,(41) 3218-5700,0800 088 5200,relacionamento@dombosco.sebsa.com.br,Não possui,"Fies, ProUni, Próprio",A,19,3288
+,FALEC – Sede,76.581.065/0001-30,"Rua José Antônio Leprevost, 331",Santa Quitéria,82640-070,(41) 3256-5717,(41) 3357-6852,,Não possui,Não oferece,A,20,3288
+,FACEAR – Araucária,09.201.296/0001-83,"Av. das Araucárias, 3803",Thomaz Coelho,83707-067,(41) 3643-1551,,,Grátis,ProUni,A,21,3216
+,FACEAR – Bacacheri,09.201.296/0001-83,"Av. Monteiro Tourinho, 1250",Tingui,82600-020,(41) 3643-1551,,,Não possui,ProUni,A,21,3288
+,FACEAR – Fazenda Rio Grande,09.201.296/0001-83,"Rua Jatobá, 525",Eucaliptos,83820-096,(41) 3643-1551,,,Não informado,ProUni,A,21,3303
+,FACEAR – Kennedy,09.201.296/0001-83,"Av. Pres. Kennedy, 3065",Rebouças,80220-201,(41) 3643-1551,,,Grátis,ProUni,A,21,3288
+,FACEAR – Santa Felicidade,09.201.296/0001-83,"Av. Ver. Toaldo Túlio, 4523",Santa Felicidade,82300-332,(41) 3643-1551,,,Não informado,ProUni,A,21,3288
+,FACEAR – Sítio Cercado,09.201.296/0001-83,"Rua Dr. Levy Buquera, 589",Sítio Cercado,81910-190,(41) 3643-1551,,,Grátis,ProUni,A,21,3288
+,ESTACIO – Curitiba,02.608.755/0001-07,"Av. Senador Souza Naves, 1715",Cristo Rei,80050-040,4003-6767 ,,,Conveniado,"ProUni, Próprio",A,22,3288
+,FEPAR – Sede,76.575.604/0001-28,"Rua Padre Anchieta, 2770",Mercês,80730-000,(41) 3240-5500,,evangelica@fepar.edu.br,Grátis,Nenhum,A,23,3288
+,FF – Sede,77.501.286/0001-13,"Rua Pastor David Koop, 189",Boqueirão,80050-540,(41) 3376-4566,,,Não possui,Não possui,A,24,3288
+,FATEC – Sede,03.366.031/0001-59,"Rua Álvaro Andrade, 345",Portão,80610-240,(41) 3026-8411,,infocursos@herrero.com.br,Não possui,Não possui,A,25,3288
+,ILAPEO – Sede,07.059.864/0001-28,"Rua Jacarezinho, 656",Mercês,80710-150,(41) 3595-6000,,ilapeo@ilapeo.com.br,Grátis,Próprio,A,26,3288
+,ISAE – Sede,00.929.003/0001-04,"Av. Visconde de Guarapuava, 2943",Centro,80010-100,(41) 3388-7800,(41) 9 9258-6171,atendimento@isaebrasil.com.br,Conveniado,Não informado,A,27,3288
+,FLT – Sede,73.794.810/0001-30,"Rua Wally Malschitzki, 164",Mato Preto,89285-295,(47) 3203-4663,(47) 3203-4663 / (47) 9 9795-0582,cursos@flt.edu.br,Não possui,Não possui,I,28,4654
+,FAMA – Curitiba,78.696.218/0001-10,"Rua Joaquim Nabuco, 968",Santa Cândida,82620-060,0800 037 4212,(41) 9 9275-7041,,Não possui,Não oferece,A,29,3288
+,FANEESP – Araucária,04.002.246/0001-53,Av. das Araucárias 5129,Thomaz Coelho,83707-000,(41) 3552-1300,,,Grátis,Não possui,A,30,3216
+,BAGOZZI – Curitiba,53.416.921/0001-04,"Rua Caetano Marchesini, 952 ",Portão,81070-110,(41) 3521-2727,,,Pago,"Fies, ProUni",A,31,3288
+,FAPAR – Sede,06.099.229/0001-01,"Al. Dom Pedro II, 432",Batel,80420-060,(41) 3015-4601,,,Pago,PraValer,A,32,3288
+,FSB – Curitiba,14.683.991/0001-69,"Rua Cláudio Chatagnier, 112",Bacacheri,82520-590,(41) 3123-9000,0800 323 9000,,Grátis,Não possui,A,33,3288
+,FAIND – Curitiba,75.047.399/0002-46,"Marginal Comendador Franco, 1341",Jardim Botânico,80215-090,(41) 3271-7910,,,Grátis,Não informado,A,34,3288
+,FAIND – CIC,75.047.399/0002-46,"Rua Senador Accioly Filho, 298",Cidade Industrial de Curitiba,81310-000,(41) 3271-7114,(41) 3271-7115,,Grátis,Não informado,A,34,3288
+,FAIND – São José dos Pinhais,75.047.399/0002-46,"Av. Rui Barbosa, 5881",Afonso Pena,83045-350,(41) 3593-1200,0800 415 881,,Grátis,Não informado,A,34,3544
+,FIES – Sede,76.038.843/0001-49,"Rua Tobias de Macedo Júnior, 246",Santo Inácio,82010-340,(41) 3155-7120,(41) 3155 7117,,Grátis,Não possui,A,35,3288
+,FARESC – Mansur,76.753.086/0001-95,"Rua Affife Mansur, 565",Novo Mundo,81050-180,(41) 3052-4900,,,Grátis,"Fies, ProUni",A,36,3288
+,ITECNE – Curitiba,03.964.817/0001-78,"Al. Cabral, 27",Centro,80410-210,(41) 3092-0198,,atendimento@itecne.com.br,Conveniado,Não informado,A,37,3288
+,OPET – Centro Cívico,75.118.406/0001-72,"Rua Nilo Peçanha, 1635",Centro Cívico,80520-000,(41) 3028-2828,(41) 9 9228-4002,,Grátis,"Fies, ProUni, Próprio, PraValer",A,38,3288
+,OPET – Rebouças,75.118.406/0001-72,"Av. Presidente Getúlio Vargas, 892",Rebouças,80230-030,(41) 3028-2828,(41) 9 9228-4002,,Grátis,"Fies, ProUni, Próprio, PraValer",A,38,3288
+,FPP – Sede,76.591.569/0001-30,"Av. Iguaçu, 333",Rebouças,80230-020,(41) 3310-1500,,contato@fpp.edu.br,Grátis,"Fies, ProUni",A,39,3288
+,FACSPEI – Sede,77.667.822/0001-55,"Rua Cruz Machado, 525",Centro,80410-170,(41) 3321-3131,,secretaria@spei.br,Conveniado,"Fies, ProUni",A,40,3288
+,FAE – Predio I,76.497.338/0001-62,"Rua 24 de Maio, 135",Centro,80230-080,0800 727 4001,,,Conveniado,"Fies, ProUni, PraValer",A,41,3288
+,FAE – Business School,76.497.338/0001-62,"Av. Visconde de Guarapuava, 3263",Centro,80010-100,0800 727 4001,,,Pago,"Fies, ProUni, PraValer",A,41,3288
+,FAE – São José dos Pinhais,76.497.338/0001-62,"Av. Rui Barbosa, 9551",Centro,83055-320,0800 727 4001,(41) 2117-9800,,Pago,"Fies, ProUni, PraValer",A,41,3544
+,PUCPR – Curitiba,76.659.820/0001-51,"Rua Imaculada Conceição, 1155",Prado Velho,80215-901,(41) 3271-1515,,,Pago,"Bolsa Família, Enade, Fies, ProUni, Próprio",A,42,3288
+,UBC – Curitiba,52.556.412/0001-06,"Rua Mateus Leme, 158",Centro,80510-190,(41) 3076-7060,(41) 3155-2022 / (41) 9 9808-0923,,Não possui,"Fies, ProUni, PraValer",A,43,3288
+,UBC – Hauer,52.556.412/0001-06,"Rua Anne Frank, 4145",Hauer,81650-020,(41) 3088-4855,(41) 9 9627-5003,,Grátis,"Fies, ProUni, PraValer",A,43,3288
+,UBC – Sítio Cercado,52.556.412/0001-06,"Rua Izaac Ferreira da Cruz, 2830",Sítio Cercado,81900-000,(41) 3013-3593,(41) 9 9675-4249,,Não possui,"Fies, ProUni, PraValer",A,43,3288
+,UBC – São José dos Pinhais,52.556.412/0001-06,"Rua Joaquim Nabuco, 1355",Cidade Jardim,83040-210,(41) 3035-2235,(41) 3283-1615,,Não possui,"Fies, ProUni, PraValer",A,43,3544
+,UFPR – Prédio Histórico,75.095.679/0001-49,"Praça Santos Andrade, 50",Centro,80020-300,(41) 3360-5000,,,Não possui,Não possui,A,44,3288
+,UFPR – Reitoria,75.095.679/0001-49,"Rua XV de Novembro, 1299",Centro,80020-310,(41) 3360-5003,,,Não possui,Não possui,A,44,3288
+,UFPR – Batel,75.095.679/0001-49,"Rua Coronel Dulcídio, 638",Batel,80420-170,(41) 3360-5000,,,Não possui,Não possui,A,44,3288
+,UFPR – Juvevê,75.095.679/0001-49,"Rua Bom Jesus, 650",Juvevê,80035-010,(41) 3360-5000,,,Grátis,Não possui,A,44,3288
+,UFPR – Cabral,75.095.679/0001-49,"Rua dos Funcionários, 1540",Cabral,80035-060,(41) 3350-5620,,,Grátis,Não possui,A,44,3288
+,UFPR – Centro Politécnico,75.095.679/0001-49,"Av. Coronel Francisco H. dos Santos, 100",Jardim das Américas,81530-001,(41) 3361-3497,,,Grátis,Não possui,A,44,3288
+,UFPR – Jardim Botânico,75.095.679/0001-49,"Av. Pref. Lothário Meissner, 632",Jardim Botânico,80210-170,(41) 3360-5000,,,Grátis,Não possui,A,44,3288
+,UFPR – SEPT,75.095.679/0001-49,"Rua Doutor Alcides Vieira Arcoverde, 1225",Jardim das Américas,81520-260,(41) 3361-4900,,,Grátis,Não possui,A,44,3288
+,UFPR – Setor de Ciências e Saúde,75.095.679/0001-49,"Rua Padre Camargo, 280",Alto da Glória,80060-240,(41) 3360-7231,,,Não possui,Não possui,A,44,3288
+,UP – Sede,78.791.712/0001-63,"R. Prof. Pedro Viriato Parigot de Souza, 5300",Cidade Industrial de Curitiba,81280-330,(41) 3317-3000,,,Pago,"Fies, ProUni, Próprio, PraValer, Proteção Desemprego",A,45,3288
+,UP – Ângelo Sampaio,78.791.712/0001-63,"Rua Alferes Ângelo Sampaio, 2300",Bigorrilho,80730-460,(41) 3338-0001,,,Não possui,"Fies, ProUni, Próprio, PraValer, Proteção Desemprego",A,45,3288
+,UP – CIC,78.791.712/0001-63,"Rua Senador Accioly Filho, 511",Cidade Industrial de Curitiba,81310-000,(41) 3338-0001,,,Pago,"Fies, ProUni, Próprio, PraValer, Proteção Desemprego",A,45,3288
+,UP – Hauer,78.791.712/0001-63,"Rua Anne Frank, 1919",Hauer,81610-020,(41) 3338-0001,,,Não possui,"Fies, ProUni, Próprio, PraValer, Proteção Desemprego",A,45,3288
+,UP – Mercês,78.791.712/0001-63,"Rua Jacarezinho, 1000",Mercês,80710-150,(41) 3317-3000,,,Não informado,"Fies, ProUni, Próprio, PraValer, Proteção Desemprego",A,45,3288
+,UP – Praça Osório,78.791.712/0001-63,"Praça General Osório, 125",Centro,80020-010,(41) 3317-3000,,,Conveniado,"Fies, ProUni, Próprio, PraValer, Proteção Desemprego",A,45,3288
+,UP – Santos Andrade,78.791.712/0001-63,"Rua XV de Novembro, 904",Centro,80060-000,(41) 3317-3000,,,Conveniado,"Fies, ProUni, Próprio, PraValer, Proteção Desemprego",A,45,3288
+,UTFPR – Centro,75.101.873/0001-90,"Av. Sete de Setembro, 3165",Rebouças,80230-901,(41) 3310-4545,,,Não possui,Não possui,A,46,3288
+,UTFPR – Ecoville,75.101.873/0001-90,"Rua Deputado Heitor Alencar Furtado, 5000",Campina do Siqueira,81280-340,(41) 3279-6800,,,Grátis,Não possui,A,46,3288
+,UTFPR – Neoville,75.101.873/0001-90,"Rua Pedro Gusso, 2601",Neoville,81310-900,(41) 3268-1749 ,,,Grátis,Não possui,A,46,3288
+,UTP – Sede,76.590.249/0001-66,"Rua Sydnei Antonio Rangel Santos, 238",Santo Inácio,82010-330,(41) 3331-7700,,,Grátis,"Fies, ProUni, Próprio",A,47,3288

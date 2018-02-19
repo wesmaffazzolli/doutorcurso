@@ -1,0 +1,10 @@
+id_curso,nome,nivel,titulo,modalidade,duracao,turno,diploma,certificado,intercambio,modulo_internacional,dupla_diplomacao,enade,cpc,cc,status,id_escola_graduacao
+,Arquitetura e Urbanismo,Graduação,Bacharel,Presencial,5 anos,"Manhã, Noite",Sim,Não,Sim,Não informado,Não informado,3.0,3.0,,A,2
+,Design,Graduação,Bacharel,Presencial,4 anos,"Manhã, Noite",Sim,Não,Sim,Não informado,Não informado,,,,A,6
+,Agronomia,Graduação,Bacharel,Presencial,5 anos,"Manhã, Noite",Sim,Não,Sim,Não informado,Não informado,,,4.0,A,4
+,Biotecnologia,Graduação,Bacharel,Presencial,4 anos,"Manhã, Noite",Sim,Não,Sim,Não informado,Não informado,,,4.0,A,4
+,Ciências Biológicas,Graduação,Bacharel,Presencial,4 anos,"Manhã, Noite",Sim,Não,Sim,Não informado,Não informado,3.0,4.0,,A,4
+,Ciências Biológicas,Graduação,Licenciatura,Presencial,4 anos,"Manhã, Noite",Sim,Não,Sim,Não informado,Não informado,3.0,3.0,4.0,A,4
+,Educação Física,Graduação,Bacharel,Presencial,4 anos,"Manhã, Noite",Sim,Não,Sim,Não informado,Não informado,3.0,3.0,3.0,A,8
+,Educação Física,Graduação,Licenciatura,Presencial,4 anos,"Manhã, Noite",Sim,Não,Sim,Não informado,Não informado,4.0,4.0,3.0,A,8
+,Enfermagem,Graduação,Bacharel,Presencial,4 anos,"Manhã, Noite",Sim,Não,Sim,Não informado,Não informado,4.0,3.0,3.0,A,17
