@@ -1,0 +1,98 @@
+ID_CAMPUS,DESCR,STATUS,ENDERECO,COMPLEMENTO,BAIRRO,CEP,TELEFONE1,TELEFONE2,EMAIL,ESTACIONAMENTO,TIPO_ESTACIONAMENTO,LATITUDE,LONGITUDE,ID_INSTITUICAO,ID_CIDADE
+,FICA – Sede,A,"Al. Dr. Muricy, 707",,Centro,80020-040,(41) 3222-2826,,,N,,,,1,3288
+,UNIBRASIL – Sede,A,"Rua Konrad Adenauer, 442",,Tarumã,82821-020,(41) 3361-4200,,,S,GR,,,2,3288
+,UNIANDRADE – Muricy,A,"Al. Dr. Muricy, 706",,Centro,80010-120,(41) 3012-3350,,,N,,,,3,3288
+,UNIANDRADE – Sede,A,"Rua João Scuissiato, 01",,Santa Quitéria,81220-090,(41) 3219-4290,,,S,GR,,,3,3288
+,UNICURITIBA – Sede,A,"Rua Chile, 1678",,Rebouças,80220-181,(41) 3213-8700,,centralatendimento@unicuritiba.edu.br,S,PG,,,4,3288
+,UNICESUMAR – Curitiba,A,"Rua Itajubá, 673",,Portão,81070-190,(41) 3389-7000,,,S,GR,,,5,3288
+,UNICESUMAR – Centro,A,"Rua Dr. Pedrosa, 55",,Centro,80420-120,(41) 3042-7520,,,N,,,,5,3288
+,UNICESUMAR – Novo Mundo,A,"Av. República Argentina, 5098",,Novo Mundo,81050-001,(41) 3049-7020,,,N,,,,5,3288
+,UNINTER – Sítio Cercado,A,"Rua Urai,78",,Sítio Cercado,81900-320,(41) 3563-1313,(41) 3349-7099 / 0800 702 0500,polocuritibasitiocercado@uninter.com,N,,,,6,3288
+,UNINTER – CIC,A,"Rua João Bettega,6100",,Cidade Industrial de Curitiba,81350-274,(41) 3229-0700,0800 702 0500,polocuritibacic@uninter.com,S,GR,,,6,3288
+,UNINTER – Uberaba,A,"Av. Coronel Francisco Heráclito dos Santos, 2801",,Jardim das Américas,81530-001,(41) 3044-7708,(41) 9 9687-9057 / 0800 702 0500,polocuritibauberaba@uninter.com,N,,,,6,3288
+,UNINTER – Carlos Gomes,A,"Rua Pedro Ivo, 504",,Centro,80010-020,(41) 3595-8100,(41) 3595-8101 / 0800 702 0500,polocuritibacarlosgomes@uninter.com,S,CV,,,6,3288
+,UNINTER – Garcez,A,"Av. Luiz Xavier, 103",2º andar Galeria Suiça,Centro,80020-020,(41) 2102-3433,(41) 2102-3455 / 0800 702 0500,polocuritibagarcez@uninter.com,N,,,,6,3288
+,UNINTER – Catedral,A,"Rua José Bonifácio, 15",,Centro,80020-130,(41) 3322-9544,0800 702 0500,polocuritibacentrocatedral@uninter.com,N,,,,6,3288
+,UNINTER – Divina,A,Rua do Rosário 147,,Centro,80020-110,(41) 2102-4917,0800 702 0500,tiradentes@cbed.com.br,N,,,,6,3288
+,UNINTER – Treze de Maio,A,"Rua Treze de Maio, 538",,São Francisco,80510-030,(41) 2102-2600,0800 702 0500,,S,GR,,,6,3288
+,UNINTER – Araucária,A,"Rua Fernando Suckow, 475",A,Centro,83702-200,(41) 3031-1271,0800 702 0500,poloaraucaria@uninter.com,S,GR,,,6,3216
+,UNINTER – São José dos Pinhais,A,"Rua Barão do Cerro Azul, 761",,Centro,83005-430,(41) 3035-4119,0800 702 0500,polosaojosedospinhaiscentro@uninter.com,S,GR,,,6,3544
+,UNINTER – Pinhais,A,"Rua Rolândia, 1293",,Alto Tarumã,83325-323,(41) 3403-0872,(41) 9 9566-3598 / 0800 702 0500,polopinhais@uninter.com,S,GR,,,6,3459
+,UNINTER – Colombo,A,"Rua da Pedreira, 1291",,Campo Pequeno,83404-010,(41) 3606-3880,(41) 9 9675-3113 / 0800 702 0500,polocolombo@uninter.com,S,GR,,,6,3273
+,UNINTER – Almirante Tamandaré,A,"Av. Emílio Johnson, 65",,Vila Santa Terezinha,83501-000,(41) 3047-1745,0800 702 0500,poloalmirantetamandare@uninter.com,N,,,,6,3198
+,UNINTER – Campo Largo,A,"Av. dos Expedicionários, 3135",,Bom Jesus,83604-360,(41) 3032-4344,(41) 9 9911-0954 / 0800 702 0500,polocampolargo@uninter.com,N,,,,6,3253
+,UNINETR – Campo Magro,A,"Rua Irmã Maria Elise Bosa, 46",,Novos Horizontes,83535-000,(41) 3677-2141,(41) 9 9635-0153 / 0800 702 0500,polocampomagro@uninter.com,N,,,,6,3254
+,UNINTER – Piraquara,A,"Rua Adélio Gomes de Aguiar, 123",,Jardim Bom Jesus dos Passos,83301-580,(41) 3673-9083,(41) 9 8835-3948 / 0800 702 0500,polopiraquara@uninter.com,N,,,,6,3464
+,UNINTER – Campina Grande do Sul,A,"Rua Alderico Bandeira de Lima, 1020",,Jardim Paulista,83430-000,(41) 3679-7211,(41) 9 9134-7838 / 0800 702 0500,polocampinagrandedosul@uninter.com,S,GR,,,6,3250
+,UNISOCIESC – Pinheirinho,A,"BR 116 Km 106, 18805",Linha Verde,Pinheirinho,81690-300,(41) 3090-9090,,,S,GR,,,7,3288
+,UNISOCIESC – Palácio Avenida,A,Rua Luis Xavier 40,,Centro,80020-020,(41) 3012-1434,,,S,CV,,,7,3288
+,ESIC – Hauer,A,"R. Padre Dehon, 814",,Hauer,81630-090,(41) 3376-1417,,esic@esic.br,S,GR,,,8,3288
+,FAESP – CIC,A,"Rua Pedro Gusso, 4150",,Cidade Industrial de Curitiba,81315-000,(41) 3069 4040,(41) 99813 9361,anchieta@faculdadeanchieta.edu.br,N,,,,9,3288
+,FAESP – Boqueirão,A,"Rua Tenente Tito Teixeira de Castro, 1222",,Boqueirão,81670-430,(41) 3123 7500,(41) 98770 3654,anchieta@faculdadeanchieta.edu.br,N,,,,9,3288
+,FCC – Centro,A,"Rua Presidente Faria, 275",,Centro,80020-290,(41) 3232-3711,,,S,CV,,,10,3288
+,FAC – Água Verde,A,"Av. República Argentina, 1.285",,Água Verde,80620-010,(41) 3089-5050,,,N,,,,11,3288
+,FACEL – Centro,A,"Rua Pedro Ivo, 750",,Centro,80010-020,(41) 3087-3650,,atendimento@facel.com.br,N,,,,12,3288
+,FESPPR – Centro,A,"Rua Dr. Faivre, 141",,Centro,80060-140,(41) 3028-6500,(41) 3028-6515,,N,,,,13,3288
+,CETEP – Sede,A,"Rua Francisco Torres, 768",,Centro,80060-130,(41) 3362-1705,,,S,CV,,,14,3288
+,FATECPR – Sede,A,"Rua Itacolomi, 450",,Portão,81070-150,(41) 3246-7722,,secretaria@fatecpr.edu.br,N,,,,15,3288
+,FATEC FUTURO – Sede,A,"Rua Alferes Poli, 1116",,Rebouças,80230-090,(41) 3333-0212,(41) 9 9782-0004 / (41) 9 9782-0003,secgeral@faculdadefuturo.com.br,S,GR,,,16,3288
+,FAITEC – Sede,A,"Rua Voluntários da Pátria, 215",2º andar,Centro,80020-000,(41) 3225-1844,(41) 9 8806-8722 / (41) 9 8806-9189,ibrate@ibrate.edu.br,N,,,,17,3288
+,IPPEO – Sede,A,"Rua José Loureiro, 347",2º andar Galeria Suiça,Centro,80010-000,(41) 3223-2587,(41) 3322-2026,secretaria@faculdadeippeo.edu.br,N,,,,18,3288
+,UNIDOM BOSCO – Marumby,A,"Av. Presidente Wenceslau Braz, 1172",,Guaíra,81010-000,(41) 3213-5200,0800 088 5200,relacionamento@dombosco.sebsa.com.br,S,GR,,,19,3288
+,UNIDOM BOSCO – Mercês,A,"Av. Manoel Ribas, 2181",,Mercês,80710-010,(41) 3218-5700,0800 088 5200,relacionamento@dombosco.sebsa.com.br,N,,,,19,3288
+,FALEC – Sede,A,"Rua José Antônio Leprevost, 331",,Santa Quitéria,82640-070,(41) 3256-5717,(41) 3357-6852,,N,,,,20,3288
+,FACEAR – Araucária,A,"Av. das Araucárias, 3803",,Thomaz Coelho,83707-067,(41) 3643-1551,,,S,GR,,,21,3216
+,FACEAR – Bacacheri,A,"Av. Monteiro Tourinho, 1250",,Tingui,82600-020,(41) 3643-1551,,,N,,,,21,3288
+,FACEAR – Fazenda Rio Grande,A,"Rua Jatobá, 525",,Eucaliptos,83820-096,(41) 3643-1551,,,N,,,,21,3303
+,FACEAR – Kennedy,A,"Av. Pres. Kennedy, 3065",,Rebouças,80220-201,(41) 3643-1551,,,S,GR,,,21,3288
+,FACEAR – Santa Felicidade,A,"Av. Ver. Toaldo Túlio, 4523",,Santa Felicidade,82300-332,(41) 3643-1551,,,N,NI,,,21,3288
+,FACEAR – Sítio Cercado,A,"Rua Dr. Levy Buquera, 589",,Sítio Cercado,81910-190,(41) 3643-1551,,,S,GR,,,21,3288
+,ESTACIO – Curitiba,A,"Av. Senador Souza Naves, 1715",,Cristo Rei,80050-040,4003-6767,,,S,CV,,,22,3288
+,FEPAR – Sede,A,"Rua Padre Anchieta, 2770",,Mercês,80730-000,(41) 3240-5500,,evangelica@fepar.edu.br,S,GR,,,23,3288
+,FF – Sede,A,"Rua Pastor David Koop, 189",,Boqueirão,80050-540,(41) 3376-4566,,,N,,,,24,3288
+,FATEC – Sede,A,"Rua Álvaro Andrade, 345",,Portão,80610-240,(41) 3026-8411,,infocursos@herrero.com.br,N,,,,25,3288
+,ILAPEO – Sede,A,"Rua Jacarezinho, 656",,Mercês,80710-150,(41) 3595-6000,,ilapeo@ilapeo.com.br,S,GR,,,26,3288
+,ISAE – Sede,A,"Av. Visconde de Guarapuava, 2943",,Centro,80010-100,(41) 3388-7800,(41) 9 9258-6171,atendimento@isaebrasil.com.br,S,CV,,,27,3288
+,FAMA – Curitiba,A,"Rua Joaquim Nabuco, 968",,Santa Cândida,82620-060,0800 037 4212,(41) 9 9275-7041,,N,,,,28,3288
+,FANEESP – Araucária,A,Av. das Araucárias 5129,,Thomaz Coelho,83707-000,(41) 3552-1300,,,S,GR,,,29,3216
+,BAGOZZI – Curitiba,A,"Rua Caetano Marchesini, 952",,Portão,81070-110,(41) 3521-2727,,,S,PG,,,30,3288
+,FAPAR – Sede,A,"Al. Dom Pedro II, 432",,Batel,80420-060,(41) 3015-4601,,,S,PG,,,31,3288
+,FSB – Curitiba,A,"Rua Cláudio Chatagnier, 112",,Bacacheri,82520-590,(41) 3123-9000,0800 323 9000,,S,GR,,,32,3288
+,FAIND – Curitiba,A,"Marginal Comendador Franco, 1341",,Jardim Botânico,80215-090,(41) 3271-7910,,,S,GR,,,33,3288
+,FAIND – CIC,A,"Rua Senador Accioly Filho, 298",,Cidade Industrial de Curitiba,81310-000,(41) 3271-7114,(41) 3271-7115,,S,GR,,,33,3288
+,FAIND – São José dos Pinhais,A,"Av. Rui Barbosa, 5881",,Afonso Pena,83045-350,(41) 3593-1200,0800 415 881,,S,GR,,,33,3544
+,FIES – Sede,A,"Rua Tobias de Macedo Júnior, 246",,Santo Inácio,82010-340,(41) 3155-7120,(41) 3155 7117,,S,GR,,,34,3288
+,FARESC – Mansur,A,"Rua Affife Mansur, 565",,Novo Mundo,81050-180,(41) 3052-4900,,,S,GR,,,35,3288
+,ITECNE – Curitiba,A,"Al. Cabral, 27",,Centro,80410-210,(41) 3092-0198,,atendimento@itecne.com.br,S,CV,,,36,3288
+,OPET – Centro Cívico,A,"Rua Nilo Peçanha, 1635",,Centro Cívico,80520-000,(41) 3028-2828,(41) 9 9228-4002,,S,GR,,,37,3288
+,OPET – Rebouças,A,"Av. Presidente Getúlio Vargas, 892",,Rebouças,80230-030,(41) 3028-2828,(41) 9 9228-4002,,S,GR,,,37,3288
+,FPP – Sede,A,"Av. Iguaçu, 333",,Rebouças,80230-020,(41) 3310-1500,,contato@fpp.edu.br,S,GR,,,38,3288
+,FACSPEI – Sede,A,"Rua Cruz Machado, 525",,Centro,80410-170,(41) 3321-3131,,secretaria@spei.br,S,CV,,,39,3288
+,FAE – Predio I,A,"Rua 24 de Maio, 135",,Centro,80230-080,0800 727 4001,,,S,CV,,,40,3288
+,FAE – Business School,A,"Av. Visconde de Guarapuava, 3263",,Centro,80010-100,0800 727 4001,,,S,PG,,,40,3288
+,FAE – São José dos Pinhais,A,"Av. Rui Barbosa, 9551",,Centro,83055-320,0800 727 4001,(41) 2117-9800,,S,PG,,,40,3544
+,PUCPR – Curitiba,A,"Rua Imaculada Conceição, 1155",,Prado Velho,80215-901,(41) 3271-1515,,,S,PG,,,41,3288
+,UBC – Curitiba,A,"Rua Mateus Leme, 158",,Centro,80510-190,(41) 3076-7060,(41) 3155-2022 / (41) 9 9808-0923,,N,,,,42,3288
+,UBC – Hauer,A,"Rua Anne Frank, 4145",,Hauer,81650-020,(41) 3088-4855,(41) 9 9627-5003,,S,GR,,,42,3288
+,UBC – Sítio Cercado,A,"Rua Izaac Ferreira da Cruz, 2830",,Sítio Cercado,81900-000,(41) 3013-3593,(41) 9 9675-4249,,N,,,,42,3288
+,UBC – São José dos Pinhais,A,"Rua Joaquim Nabuco, 1355",,Cidade Jardim,83040-210,(41) 3035-2235,(41) 3283-1615,,N,,,,42,3544
+,UFPR – Prédio Histórico,A,"Praça Santos Andrade, 50",,Centro,80020-300,(41) 3360-5000,,,N,,,,43,3288
+,UFPR – Reitoria,A,"Rua XV de Novembro, 1299",,Centro,80020-310,(41) 3360-5003,,,N,,,,43,3288
+,UFPR – Batel,A,"Rua Coronel Dulcídio, 638",,Batel,80420-170,(41) 3360-5000,,,N,,,,43,3288
+,UFPR – Juvevê,A,"Rua Bom Jesus, 650",,Juvevê,80035-010,(41) 3360-5000,,,S,GR,,,43,3288
+,UFPR – Cabral,A,"Rua dos Funcionários, 1540",,Cabral,80035-060,(41) 3350-5620,,,S,GR,,,43,3288
+,UFPR – Centro Politécnico,A,"Av. Coronel Francisco H. dos Santos, 100",,Jardim das Américas,81530-001,(41) 3361-3497,,,S,GR,,,43,3288
+,UFPR – Jardim Botânico,A,"Av. Pref. Lothário Meissner, 632",,Jardim Botânico,80210-170,(41) 3360-5000,,,S,GR,,,43,3288
+,UFPR – SEPT,A,"Rua Doutor Alcides Vieira Arcoverde, 1225",,Jardim das Américas,81520-260,(41) 3361-4900,,,S,GR,,,43,3288
+,UFPR – Setor de Ciências e Saúde,A,"Rua Padre Camargo, 280",,Alto da Glória,80060-240,(41) 3360-7231,,,N,,,,43,3288
+,UP – Sede,A,"R. Prof. Pedro Viriato Parigot de Souza, 5300",,Cidade Industrial de Curitiba,81280-330,(41) 3317-3000,,,S,PG,,,44,3288
+,UP – Ângelo Sampaio,A,"Rua Alferes Ângelo Sampaio, 2300",,Bigorrilho,80730-460,(41) 3338-0001,,,N,,,,44,3288
+,UP – CIC,A,"Rua Senador Accioly Filho, 511",,Cidade Industrial de Curitiba,81310-000,(41) 3338-0001,,,S,PG,,,44,3288
+,UP – Hauer,A,"Rua Anne Frank, 1919",,Hauer,81610-020,(41) 3338-0001,,,N,,,,44,3288
+,UP – Mercês,A,"Rua Jacarezinho, 1000",,Mercês,80710-150,(41) 3317-3000,,,N,,,,44,3288
+,UP – Praça Osório,A,"Praça General Osório, 125",,Centro,80020-010,(41) 3317-3000,,,S,CV,,,44,3288
+,UP – Santos Andrade,A,"Rua XV de Novembro, 904",,Centro,80060-000,(41) 3317-3000,,,S,CV,,,44,3288
+,UTFPR – Centro,A,"Av. Sete de Setembro, 3165",,Rebouças,80230-901,(41) 3310-4545,,,N,,,,45,3288
+,UTFPR – Ecoville,A,"Rua Deputado Heitor Alencar Furtado, 5000",,Campina do Siqueira,81280-340,(41) 3279-6800,,,S,GR,,,45,3288
+,UTFPR – Neoville,A,"Rua Pedro Gusso, 2601",,Neoville,81310-900,(41) 3268-1749,,,S,GR,,,45,3288
+,UTP – Sede,A,"Rua Sydnei Antonio Rangel Santos, 238",,Santo Inácio,82010-330,(41) 3331-7700,,,S,GR,,,46,3288

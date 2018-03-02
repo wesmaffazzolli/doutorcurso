@@ -1,0 +1,47 @@
+ID_INSTITUICAO,DESCR,DESCRSHORT,STATUS,CI,CI_EAD,IGC,ID_ORGANIZACAO_ACADEMICA
+,Faculdades Integradas Camões,FICA,A,3.0,,3.0,1
+,Centro Universitário Autônomo do Brasil,UNIBRASIL,A,4.0,5.0,3.0,2
+,Centro Universitário Campos de Andrade,UNIANDRADE,A,4.0,,3.0,2
+,Centro Universitário Curitiba,UNICURITIBA,A,3.0,,3.0,2
+,Centro Universitário de Maringá,UNICESUMAR,A,4.0,,4.0,2
+,Centro Universitário Internacional,UNINTER,A,4.0,,3.0,2
+,Centro Universitário Sociesc de Curitiba,UNISOCIESC,A,4.0,,4.0,2
+,Escola Superior de Gestão Comercial e Marketing,ESIC,A,3.0,,3.0,1
+,Faculdade Anchieta de Ensino Superior do Paraná,FAESP,A,3.0,,4.0,1
+,Faculdade Cristã de Curitiba,FCC,A,3.0,4.0,3.0,1
+,Faculdade Curitibana,FAC,A,3.0,,,1
+,Faculdade de Administração Ciências Educação e Letras,FACEL,A,3.0,,2.0,1
+,Faculdade de Educação Superior do Paraná,FESPPR,A,3.0,4.0,3.0,1
+,Faculdade de Tecnologia Cetep,CETEP,A,3.0,,2.0,1
+,Faculdade de Tecnologia de Curitiba,FATEC PR,A,3.0,,4.0,1
+,Faculdade de Tecnologia Futuro,FATEC FUTURO,A,2.0,,,1
+,Faculdade de Tecnologia Ibrate,FAITEC,A,3.0,,,1
+,Faculdade de Tecnologia Ippeo,IPPEO,A,3.0,3.0,2.0,1
+,Centro Universitário UNIDOM BOSCO,UNIDOM BOSCO,A,5.0,4.0,3.0,2
+,Faculdade Doutor Leocádio José Correia,FALEC,A,3.0,,3.0,1
+,Faculdade Educacional Araucária,FACEAR,A,4.0,4.0,3.0,1
+,Faculdade Estácio de Curitiba,ESTACIO,A,3.0,,3.0,1
+,Faculdade Evangélica do Paraná,FEPAR,A,4.0,,3.0,1
+,Faculdade Fidelis,FF,A,3.0,,3.0,1
+,Faculdade Herrero,FATEC,A,3.0,,3.0,1
+,Faculdade Ilapeo,ILAPEO,A,4.0,,,1
+,Faculdade Isae Brasil,ISAE,A,4.0,,,1
+,Faculdade de Tecnologia Machado de Assis,FAMA,A,3.0,,3.0,1
+,Faculdade Nacional de Educação e Ensino Superior do Paraná,FANEESP,A,3.0,,2.0,1
+,Faculdade Padre João Bagozzi,BAGOZZI,A,3.0,,3.0,1
+,Faculdade Paranaense,FAPAR,A,3.0,,3.0,1
+,Faculdade São Braz,FSB,A,3.0,,4.0,1
+,Faculdades da Industria,FAIND,A,3.0,,,1
+,Faculdades Integradas Espírita,FIES,A,3.0,,3.0,1
+,Faculdades Integradas Santa Cruz de Curitiba,FARESC,A,3.0,,3.0,1
+,Faculdades Itecne de Casvável,ITECNE,A,3.0,,2.0,1
+,Faculdades Opet,OPET,A,4.0,,3.0,1
+,Faculdades Pequeno Príncipe,FPP,A,4.0,,4.0,1
+,Faculdades SPEI,FACSPEI,A,3.0,,3.0,1
+,FAE Centro Universitário,FAE,A,4.0,,4.0,2
+,Pontifícia Universidade Católica do Paraná,PUCPR,A,5.0,,4.0,3
+,Universidade Braz Cubas,UBC,A,3.0,,3.0,3
+,Universidade Federal do Paraná,UFPR,A,4.0,3.0,4.0,3
+,Universidade Positivo,UP,A,4.0,,4.0,3
+,Universidade Tecnológica Federal do Paraná,UTFPR,A,4.0,,4.0,3
+,Universidade Tuiuti do Paraná,UTP,A,4.0,,4.0,3
