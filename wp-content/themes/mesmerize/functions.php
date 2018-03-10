@@ -11,6 +11,12 @@ if ( ! defined('MESMERIZE_THEME_REQUIRED_PHP_VERSION')) {
 
 add_action('after_switch_theme', 'mesmerize_check_php_version');
 
+/* Funções customizadas */
+function get_my_custom_searchform() {
+    include "searchform_custom.php";
+}
+
+
 function mesmerize_check_php_version()
 {
     // Compare versions.

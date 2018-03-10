@@ -20,7 +20,7 @@
         <div <?php echo mesmerize_header_background_atts(); ?>>
             <?php do_action( 'mesmerize_before_header_background' ); ?>
 			<?php mesmerize_print_video_container(); ?>
-					<?php mesmerize_print_inner_pages_header_content(); ?>
+            <?php mesmerize_print_inner_pages_header_content(); ?>
             <?php mesmerize_print_header_separator(); ?>
         </div>
     </div>
