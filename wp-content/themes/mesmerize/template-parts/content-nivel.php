@@ -1,24 +1,6 @@
-<?php /* Template name: Custom Search */   
-    get_header('custom'); 
-?>
-
     <?php $wpdb->show_errors = TRUE;
     $wpdb->suppress_errors = FALSE; 
     ?>
-
-
-
-    <div class="container-fluid config-base-barra-pesquisa">
-        <div class="row">
-            <div class="col-12">
-                <form role="search" method="get" class="config-form-barra-pesquisa" action="<?php esc_url( home_url( '/search' ) )?>">
-                    <!--<input type="search" class="config-direct-barra-pesquisa" value="<?php get_search_query() ?>" name="s" />-->
-                    <input type="search" class="config-direct-barra-pesquisa" value="<?php get_search_query() ?>" name="s" />
-                    <button type="button" class="config-botao-barra-pesquisa">Pesquisar</button>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <div class="container">        
 
@@ -27,7 +9,7 @@
         $param = $_GET['s'];
 
         $cursos = $wpdb->get_results($wpdb->prepare(
-        "SELECT a.igc AS instituicao_nota, a.descr AS instituicao_nome, a.descrshort, b.descr AS campus_nome, b.endereco, b.bairro, c.descr AS cidade_nome, d.uf, f.id_curso, f.descr AS curso_nome, f.duracao, f.diploma, f.dupla_diplomacao, f.intercambio, f.enade, f.cc, f.cpc AS curso_nota, g.descr AS nivel, i.descr AS titulo, k.descr AS modalidade " .
+        "SELECT a.igc AS instituicao_nota, a.descr AS instituicao_nome, a.descrshort, b.descr AS campus_nome, b.endereco, b.bairro, c.descr AS cidade_nome, d.uf, f.descr AS curso_nome, f.duracao, f.diploma, f.dupla_diplomacao, f.intercambio, f.enade, f.cc, f.cpc AS curso_nota, g.descr AS nivel, i.descr AS titulo, k.descr AS modalidade " .
         "FROM instituicao a, campus b, cidade c, estado d, campus_curso e, curso f, nivel g, curso_titulo h, titulo i, curso_modalidade j, modalidade k " .
         "WHERE a.id_instituicao = b.id_instituicao " .
         "AND b.id_cidade = c.id_cidade " .
@@ -231,7 +213,7 @@
                             <div class="col-12">
                                 <div class="row no-gutter alinhamento">
                                     <div class="col-12">
-                                        <a href="/curso/?c_id=<?php echo $curso->id_curso;?>" class="btn btn-success fluid-size">TENHO INTERESSE</a>
+                                        <a href="#" class="btn btn-success fluid-size">TENHO INTERESSE</a>
                                     </div>
                                 </div>
                             </div>
@@ -243,5 +225,3 @@
          <?php } ?>
     </div>
 </div>
-
-<?php get_footer(); ?>
