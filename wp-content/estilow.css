@@ -5,6 +5,10 @@ body {
 
 /* SEÇÃO CURSO */
 
+.titulo-grande {
+    font-size: 80px;
+}
+
 #curso .card {
     background-color: black;
 }
