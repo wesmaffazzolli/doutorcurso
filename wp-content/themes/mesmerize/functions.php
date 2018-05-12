@@ -7,6 +7,131 @@
 
 /* =========== INÍCIO: FUNÇÕES DECLARADAS =============== */
 
+function getCoursesBySearchParam($param) {
+    global $wpdb;
+
+    $cursos = $wpdb->get_results($wpdb->prepare(
+    "SELECT A.ID_CURSO as id_curso, C.ID_CAMPUS as id_campus " .
+    "FROM CURSO A, CAMPUS_CURSO B, CAMPUS C " .
+    "WHERE A.DESCR LIKE '%%s%' " .
+    "AND A.ID_CURSO = B.ID_CURSO " .
+    "AND B.ID_CAMPUS = C.ID_CAMPUS ", $param));
+
+    return $cursos;
+}
+
+function getCoursesByNivelAndEscola($parent, $slug) {
+
+    global $wpdb;
+
+    $cursos = $wpdb->get_results($wpdb->prepare(
+    "SELECT A.ID_CURSO as id_curso, C.ID_CAMPUS as id_campus " .
+    "FROM CURSO A, CAMPUS_CURSO B, CAMPUS C, ESCOLA D, NIVEL E " .
+    "WHERE A.ID_CURSO = B.ID_CURSO " .
+    "AND B.ID_CAMPUS = C.ID_CAMPUS " .
+    "AND A.ID_ESCOLA = D.ID_ESCOLA " .
+    "AND D.SLUG = '%s' " .
+    "AND A.ID_NIVEL = E.ID_NIVEL " .
+    "AND E.SLUG = '%s' ", array($slug, $parent))); 
+
+    return $cursos;
+}
+
+function getInfoTableByIdNn($tabela, $nomeColuna, $nomeColunaComparacao, $id) {
+    global $wpdb;
+    $result = "";
+
+    $query = "SELECT {$nomeColuna} ".
+             "FROM {$tabela} A ".
+             "WHERE A.{$nomeColunaComparacao} = {$id} ".
+             "AND A.STATUS = 'A' ";
+
+    $result = $wpdb->get_var($query);
+
+    return $result;
+}
+
+function getInfoTableById($tabela, $nomeColuna, $id, $ativo) {
+    global $wpdb;
+    $result = "";
+    if(empty($ativo)) {
+        $ativo = false;
+    }
+
+    $query = "SELECT {$nomeColuna} ".
+             "FROM {$tabela} A ".
+             "WHERE A.ID_{$tabela} = {$id} ";
+
+    $result = $wpdb->get_var($ativo == true ? $query."AND STATUS = 'A' " : $query);
+
+    return $result;
+}
+
+
+function getInfoCampusById($idCampus, $nomeColuna) {
+    global $wpdb;
+    $result = "";
+
+    $result = $wpdb->get_var(
+        "SELECT {$nomeColuna} ".
+        "FROM CAMPUS A ".
+        "WHERE A.ID_CAMPUS = {$idCampus} ");
+
+    return $result;
+}
+
+function getInfoCursoById($idCurso, $nomeColuna) {
+    global $wpdb;
+    $result = "";
+
+    $result = $wpdb->get_var(
+        "SELECT {$nomeColuna} ".
+        "FROM CURSO A ".
+        "WHERE A.ID_CURSO = {$idCurso} ");
+
+    return $result;
+}
+
+function getNomeCursoById($idCurso) {
+    global $wpdb;
+    $result = "";
+
+    $result = $wpdb->get_var($wpdb->prepare(
+        "SELECT DESCR ".
+        "FROM CURSO A ".
+        "WHERE A.ID_CURSO = %s ", $idCurso));
+
+    return $result;
+}
+
+
+function getPostParent() {
+    global $post;
+
+    /* Get an array of Ancestors and Parents if they exist */
+    $parents = get_post_ancestors( $post->ID );
+    /* Get the top Level page->ID count base 1, array base 0 so -1 */ 
+    $id = ($parents) ? $parents[count($parents)-1]: $post->ID;
+    /* Get the parent and set the $class with the page slug (post_name) */
+    $parent = get_post($id);
+    $post_parent = $parent->post_name;
+    return $post_parent;
+}
+
+function getPostSlug() {
+    // Get the queried object and sanitize it
+    $current_page = sanitize_post( $GLOBALS['wp_the_query']->get_queried_object() );
+    // Get the page slug
+    $slug = $current_page->post_name;
+
+    /*global $post;
+    $post_slug=$post->post_name;
+    echo $post_slug;*/
+
+    return $slug;
+}
+
+
 function isFinancimento($idCampus) {
     global $wpdb;
 
