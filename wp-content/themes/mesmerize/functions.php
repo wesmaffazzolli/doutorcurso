@@ -7,6 +7,30 @@
 
 /* =========== INÍCIO: FUNÇÕES DECLARADAS =============== */
 
+function getNumAvaliacoes($param) {
+    global $wpdb;
+
+    $contagem = $wpdb->get_var($wpdb->prepare(
+    "SELECT COUNT(*) as contagem " .
+    "FROM AVALIACAO A " .
+    "WHERE A.ID_CURSO = '%s' ", $param));
+
+    return $contagem;
+}
+
+function getCourseById($param) {
+    global $wpdb;
+
+    $cursos = $wpdb->get_results($wpdb->prepare(
+    "SELECT A.ID_CURSO as id_curso, C.ID_CAMPUS as id_campus " .
+    "FROM CURSO A, CAMPUS_CURSO B, CAMPUS C " .
+    "WHERE A.ID_CURSO = '%s' " .
+    "AND A.ID_CURSO = B.ID_CURSO " .
+    "AND B.ID_CAMPUS = C.ID_CAMPUS ", $param));
+
+    return $cursos;
+}
+
 function getCoursesBySearchParam($param) {
     global $wpdb;
 

@@ -4,12 +4,31 @@
 	
 	the_content(); 
 
-   		//login_with_ajax();
+	if (is_ultimatemember()) {
+		session_start();
+		$_SESSION['id'] = um_profile_id();
+		$_SESSION['username'] = um_user('display_name');
+		$_SESSION['role'] = um_user('role_name');
+		$_SESSION['time'] = time();
+	}
 
-   		//do_action('my_ninja_forms_processing', Ninja_Forms()->form( 6 )->get());
 
-   ?>
+	/* 
+
+	Parâmetros de regisgtro:
+	Nome: first_name
+	Sobrenome: last_name
+	Email: user_email
+	Senha: user_password
+
+	Parâmetros de login:
+	Email: username
+	Senha: user_password
+
+	*/
 
 
+
+?>
 
   </div>
