@@ -7,6 +7,17 @@
 
     <?php wp_head(); ?>
     <link rel="stylesheet" type="text/css" href="wp-content/themes/mesmerize/estilo.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118968219-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-118968219-1');
+    </script>
+    
 </head>
 
 <body <?php body_class(); ?>>

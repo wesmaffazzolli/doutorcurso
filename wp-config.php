@@ -56,7 +56,7 @@ define('DB_USER', 'root');
 /** MySQL database password */
 
 /* define('DB_PASSWORD', 'C#w4Ij1*dPP8*nz1DN#95&(5'); */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'rootpass');
 
 
 /** MySQL hostname */

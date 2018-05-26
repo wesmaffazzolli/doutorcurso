@@ -7,6 +7,104 @@
 
 /* =========== INÍCIO: FUNÇÕES DECLARADAS =============== */
 
+function getAvaliacoesCurso($id_curso) {
+    global $wpdb;
+
+    $query = "SELECT A.COMENTARIO as comentario, A.RECOMENDACAO_NPS as recomendacao ".
+              "FROM AVALIACAO A ".
+              "WHERE A.ID_CURSO = '{$id_curso}' ".
+              "ORDER BY A.DATA_HORA DESC ";
+
+    return $wpdb->get_results($query);
+}
+
+function getIdUltimoPost() {
+    global $wpdb;
+
+    $query = "SELECT A.ID ".
+              "FROM WP_POSTS A, WP_POSTMETA B ".
+              "WHERE A.POST_TYPE = 'nf_sub' ". 
+              "AND A.POST_DATE = (SELECT MAX(C.POST_DATE) FROM WP_POSTS C) ".
+              "AND A.ID = B.POST_ID ".
+              "GROUP BY A.ID";
+
+    return $wpdb->get_var($query);
+}
+
+function montaArrayAvaliacoes($post_id) {
+
+    $avaliacoesArray = array('QUALIDADE_PROFESSORES' => '', 'AULAS_PRATICAS' => '', 'ESTAGIO_PROJETOS' => '', 'CUSTO_BENEFICIO' => '', 'ESTRUTURA' => '', 'LABORATORIO_TECNOLOGIA' => '', 'SEGURANCA' => '', 'ATENDIMENTO' => '', 'RECOMENDACAO_NPS' => '', 'COMENTARIO' => '', 'ID_USUARIO' => '', 'ID_CURSO' => '');
+
+    foreach ($avaliacoesArray as $key => $value) {
+        switch ($key) {
+          case 'QUALIDADE_PROFESSORES':
+          $avaliacoesArray[$key] = getAvaliacao($post_id, "_field_29");
+            break;
+          case 'AULAS_PRATICAS':
+          $avaliacoesArray[$key] = getAvaliacao($post_id, "_field_30");
+            break;
+          case 'ESTAGIO_PROJETOS':
+          $avaliacoesArray[$key] = getAvaliacao($post_id, "_field_32");
+            break;
+          case 'CUSTO_BENEFICIO':
+          $avaliacoesArray[$key] = getAvaliacao($post_id, "_field_33");
+            break;
+          case 'ESTRUTURA':
+          $avaliacoesArray[$key] = getAvaliacao($post_id, "_field_35");
+            break;
+          case 'LABORATORIO_TECNOLOGIA':
+          $avaliacoesArray[$key] = getAvaliacao($post_id, "_field_36");
+            break;
+          case 'SEGURANCA':
+          $avaliacoesArray[$key] = getAvaliacao($post_id, "_field_37");
+            break;
+          case 'ATENDIMENTO':
+          $avaliacoesArray[$key] = getAvaliacao($post_id, "_field_39");
+            break;
+          case 'RECOMENDACAO_NPS':
+          $avaliacoesArray[$key] = getAvaliacao($post_id, "_field_21");
+            break;
+          case 'COMENTARIO':
+          $avaliacoesArray[$key] = getAvaliacao($post_id, "_field_77");
+            break;
+          case 'ID_USUARIO':
+          $avaliacoesArray[$key] = (string) um_profile_id();
+            break;
+          case 'ID_CURSO':
+          $avaliacoesArray[$key] = getAvaliacao($post_id, "_field_76");
+            break;
+
+          default:
+            break;
+        }
+    }
+
+    return $avaliacoesArray;
+}
+
+function getAvaliacao($postId, $field) {
+    global $wpdb;
+
+    $result = $wpdb->get_var("SELECT A.META_VALUE FROM WP_POSTMETA A WHERE A.POST_ID = {$postId} AND A.META_KEY = '{$field}' ");
+    return $result;
+}
+
+function calculaAvaliacoes($idCurso, $nomeColuna) {
+    global $wpdb;
+
+    $soma = $wpdb->get_var($wpdb->prepare(
+    "SELECT SUM({$nomeColuna}) as soma " .
+    "FROM AVALIACAO A " .
+    "WHERE A.ID_CURSO = '%s' ", $idCurso));
+
+    $num_avaliacoes = getNumAvaliacoes($idCurso);
+    if($num_avaliacoes != 0) {
+        return ($soma/$num_avaliacoes);
+    } else {
+        return $soma;
+    }
+}
+
 function getNumAvaliacoes($param) {
     global $wpdb;
 

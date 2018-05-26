@@ -10,9 +10,11 @@
         if(isset($_GET['c_id'])) {
             $param = $_GET['c_id'];
             $cursos = getCourseById($param);
+            $avaliacoes = getAvaliacoesCurso($param);
+            setcookie("user_location", get_permalink()."?c_id=".$param, time()+3600, "/", "localhost");
         } else {
             get_template_part( 'template-parts/content', 'none' );
-        } 
+        }
 
         foreach($cursos as $curso) { ?>
 
@@ -32,7 +34,7 @@
                 </p>
             </div>
             <div class="col-sm-2">
-                <a href="curso?c_id=<?php echo $curso->id_curso; ?>" class="btn btn-success fluid-size">TENHO INTERESSE ></a>
+                <a href="querosabermais/?c_id=<?php echo $curso->id_curso; ?>" class="btn btn-success fluid-size">QUERO SABER MAIS ></a>
             </div>
         </div>
 
@@ -267,9 +269,9 @@
                                         <p>Qualidade e Nível de Formação dos Professores:</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php $nota_qualidade_professores = getInfoTableById("CURSO", "CPC", $curso->id_curso, true); ?>
-                                        <?php if(!empty($curso->curso_nota)) { ?>
-                                            <p><span class="badge badge-primary config-badge"><?php echo $curso->curso_nota;?></span></p>    
+                                        <?php $nota_qualidade_professores = calculaAvaliacoes($curso->id_curso, "QUALIDADE_PROFESSORES"); ?>
+                                        <?php if(!empty($nota_qualidade_professores)) { ?>
+                                            <p><span class="badge badge-primary config-badge"><?php echo number_format((float)$nota_qualidade_professores, 1, '.', ''); ?></span></p>    
                                         <?php } else { ?>
                                             <p><span class="badge badge-primary config-badge"><?php echo "-";?></span></p>
                                         <?php } ?>
@@ -280,20 +282,9 @@
                                         <p>Aulas Práticas:</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php if(!empty($curso->curso_nota)) { ?>
-                                            <p><span class="badge badge-primary config-badge"><?php echo $curso->curso_nota;?></span></p>    
-                                        <?php } else { ?>
-                                            <p><span class="badge badge-primary config-badge"><?php echo "-";?></span></p>
-                                        <?php } ?>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-8 col-md-8">
-                                        <p>Atualização de Conteúdos Ensinados:</p>
-                                    </div>
-                                    <div class="col-4 col-md-4">
-                                        <?php if(!empty($curso->curso_nota)) { ?>
-                                            <p><span class="badge badge-primary config-badge"><?php echo $curso->curso_nota;?></span></p>    
+                                        <?php $nota_aulas_praticas = calculaAvaliacoes($curso->id_curso, "AULAS_PRATICAS"); ?>
+                                        <?php if(!empty($nota_aulas_praticas)) { ?>
+                                            <p><span class="badge badge-primary config-badge"><?php echo number_format((float)$nota_aulas_praticas, 1, '.', ''); ?></span></p>    
                                         <?php } else { ?>
                                             <p><span class="badge badge-primary config-badge"><?php echo "-";?></span></p>
                                         <?php } ?>
@@ -304,8 +295,9 @@
                                         <p>Apoio para Projetos e/ou Estágios:</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php if(!empty($curso->curso_nota)) { ?>
-                                            <p><span class="badge badge-primary config-badge"><?php echo $curso->curso_nota;?></span></p>    
+                                        <?php $nota_estagio_projetos = calculaAvaliacoes($curso->id_curso, "ESTAGIO_PROJETOS"); ?>
+                                        <?php if(!empty($nota_estagio_projetos)) { ?>
+                                            <p><span class="badge badge-primary config-badge"><?php echo number_format((float)$nota_estagio_projetos, 1, '.', '');?></span></p>    
                                         <?php } else { ?>
                                             <p><span class="badge badge-primary config-badge"><?php echo "-";?></span></p>
                                         <?php } ?>
@@ -316,8 +308,9 @@
                                         <p>Relação de Custos vs. Benefícios:</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php if(!empty($curso->curso_nota)) { ?>
-                                            <p><span class="badge badge-primary config-badge"><?php echo $curso->curso_nota;?></span></p>    
+                                        <?php $nota_custos_beneficios = calculaAvaliacoes($curso->id_curso, "CUSTO_BENEFICIO"); ?>
+                                        <?php if(!empty($nota_custos_beneficios)) { ?>
+                                            <p><span class="badge badge-primary config-badge"><?php echo number_format((float)$nota_custos_beneficios, 1, '.', '');?></span></p>    
                                         <?php } else { ?>
                                             <p><span class="badge badge-primary config-badge"><?php echo "-";?></span></p>
                                         <?php } ?>
@@ -331,8 +324,9 @@
                                         <p>Estrutura (salas de aula, biblioteca, wi-fi, etc):</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php if(!empty($curso->curso_nota)) { ?>
-                                            <p><span class="badge badge-primary config-badge"><?php echo $curso->curso_nota;?></span></p>    
+                                        <?php $nota_estrutura = calculaAvaliacoes($curso->id_curso, "ESTRUTURA"); ?>
+                                        <?php if(!empty($nota_estrutura)) { ?>
+                                            <p><span class="badge badge-primary config-badge"><?php echo number_format((float)$nota_estrutura, 1, '.', ''); ?></span></p>    
                                         <?php } else { ?>
                                             <p><span class="badge badge-primary config-badge"><?php echo "-";?></span></p>
                                         <?php } ?>
@@ -343,8 +337,9 @@
                                         <p>Qualidade dos Laboratórios e Tecnologia:</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php if(!empty($curso->curso_nota)) { ?>
-                                            <p><span class="badge badge-primary config-badge"><?php echo $curso->curso_nota;?></span></p>    
+                                        <?php $nota_laboratorios_tecnologia = calculaAvaliacoes($curso->id_curso, "LABORATORIO_TECNOLOGIA"); ?>
+                                        <?php if(!empty($nota_laboratorios_tecnologia)) { ?>
+                                            <p><span class="badge badge-primary config-badge"><?php echo number_format((float)$nota_laboratorios_tecnologia, 1, '.', '');?></span></p>    
                                         <?php } else { ?>
                                             <p><span class="badge badge-primary config-badge"><?php echo "-";?></span></p>
                                         <?php } ?>
@@ -355,20 +350,9 @@
                                         <p>Nível de Segurança para o Aluno:</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php if(!empty($curso->curso_nota)) { ?>
-                                            <p><span class="badge badge-primary config-badge"><?php echo $curso->curso_nota;?></span></p>    
-                                        <?php } else { ?>
-                                            <p><span class="badge badge-primary config-badge"><?php echo "-";?></span></p>
-                                        <?php } ?>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-8 col-md-8">
-                                        <p>Corpo Docente (coordenação e funcionários):</p>
-                                    </div>
-                                    <div class="col-4 col-md-4">
-                                        <?php if(!empty($curso->curso_nota)) { ?>
-                                            <p><span class="badge badge-primary config-badge"><?php echo $curso->curso_nota;?></span></p>    
+                                        <?php $nota_seguranca_aluno = calculaAvaliacoes($curso->id_curso, "SEGURANCA"); ?>
+                                        <?php if(!empty($nota_seguranca_aluno)) { ?>
+                                            <p><span class="badge badge-primary config-badge"><?php echo number_format((float)$nota_seguranca_aluno, 1, '.', ''); ?></span></p>    
                                         <?php } else { ?>
                                             <p><span class="badge badge-primary config-badge"><?php echo "-";?></span></p>
                                         <?php } ?>
@@ -379,8 +363,9 @@
                                         <p>Qualidade de Atendimento ao Aluno:</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php if(!empty($curso->curso_nota)) { ?>
-                                            <p><span class="badge badge-primary config-badge"><?php echo $curso->curso_nota;?></span></p>    
+                                        <?php $nota_qualidade_atendimento_aluno = calculaAvaliacoes($curso->id_curso, "ATENDIMENTO"); ?>
+                                        <?php if(!empty($nota_qualidade_atendimento_aluno)) { ?>
+                                            <p><span class="badge badge-primary config-badge"><?php echo number_format((float)$nota_qualidade_atendimento_aluno, 1, '.', ''); ?></span></p>    
                                         <?php } else { ?>
                                             <p><span class="badge badge-primary config-badge"><?php echo "-";?></span></p>
                                         <?php } ?>
@@ -393,7 +378,7 @@
                         <div class="col-12">
                             <div class="row no-gutter alinhamento">
                                 <div class="col-12">
-                                    <a href="curso?c_id=<?php echo $curso->id_curso; ?>" class="btn btn-success fluid-size">AVALIE ></a>
+                                    <a href="avaliar?c_id=<?php echo $curso->id_curso; ?>" class="btn btn-success fluid-size">AVALIE ></a>
                                 </div>
                             </div>
                         </div>
@@ -410,27 +395,23 @@
                 <div class="container">
                     <div class="card-block">                        
                         <ul class="list-unstyled">
+
+                        <?php
+                        foreach ($avaliacoes as $avaliacao) { ?>
+
                           <li class="media">
                             <img class="mr-3" src="https://bowdaa.com/images/membersprofilepic/noprofilepicture.gif" alt="Generic placeholder image" style="width: 50px; height: 50px;">
                             <div class="media-body">
-                              <h5 class="mt-0 mb-1">List-based media object</h5>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                <?php for($i = 0; $i < $avaliacao->recomendacao; $i++) { ?> 
+                                    <span class="fa fa-star checked" style="color: orange;"></span>
+                                <?php } ?>
+                              <h5 class="mt-0 mb-1">Comentário:</h5>
+                                <?php echo $avaliacao->comentario; ?>
                             </div>
                           </li>
-                          <li class="media my-4">
-                            <img class="mr-3" src="https://bowdaa.com/images/membersprofilepic/noprofilepicture.gif" alt="Generic placeholder image" style="width: 50px; height: 50px;">
-                            <div class="media-body">
-                              <h5 class="mt-0 mb-1">List-based media object</h5>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                            </div>
-                          </li>
-                          <li class="media">
-                            <img class="mr-3" src="https://bowdaa.com/images/membersprofilepic/noprofilepicture.gif" alt="Generic placeholder image" style="width: 50px; height: 50px;">
-                            <div class="media-body">
-                              <h5 class="mt-0 mb-1">List-based media object</h5>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                            </div>
-                          </li>
+
+                        <?php } ?>
+
                         </ul>
                     </div>
                 </div>
