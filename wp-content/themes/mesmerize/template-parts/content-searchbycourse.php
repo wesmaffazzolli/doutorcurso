@@ -1,25 +1,24 @@
 <?php 
 
 	$parent = getPostParent();
-	$cursos = array();
+	$slug = getPostSlug();
+	//$cursos = getCoursesByNivelAndEscola($parent, $slug);
+    $cursos = getCoursesByNivelAndEscola("graduacao", "direito");
 
-	if(isset($_GET['s'])) {
-		$param = $_GET['s'];
-		$cursos = getCoursesBySearchParam($param);
-	} else if($parent == 'graduacao' || $parent == 'pos-graducao' || $parent == 'mestrado' || $parent == 'doutorado') {
-		$slug = getPostSlug();
-		$cursos = getCoursesByNivelAndEscola($parent, $slug);
-	}
+    $nivel = getNivelBySlug($parent);
+    $escola = getEscolaBySlug($slug);
 
 	if(count($cursos) == 0) {
 		get_template_part( 'template-parts/content', 'none' );
 	} else { ?>
 
+	<span class="screen-reader-text"><?php _ex('Search for:', 'label', 'mesmerize'); ?></span>
+
 	<div class="alert alert-info" role="alert">
   		<?php if(count($cursos) > 1) {
-  			echo "<h5>".count($cursos)." cursos encontrados para \"{$param}\"...</h5>"; 	
+  			echo "<h5>".count($cursos)." cursos encontrados para {$nivel} em {$escola}...</h5>"; 	
   		} else {
-  			echo "<h5>".count($cursos)." curso encontrado para \"{$param}\"...</h5>";
+  			echo "<h5>".count($cursos)." curso encontrado para {$nivel} em {$escola}...</h5>";
   		}
   		
   		?>

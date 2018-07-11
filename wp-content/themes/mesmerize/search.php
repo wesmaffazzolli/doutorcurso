@@ -9,10 +9,10 @@
     <div class="container-fluid config-base-barra-pesquisa">
         <div class="row">
             <div class="col-12">
-                <form role="search" method="get" class="config-form-barra-pesquisa" action="<?php esc_url( home_url( '/search' ) )?>">
+                <form role="search" method="get" class="config-form-barra-pesquisa" action="<?php esc_url(home_url('/'))?>">
                     <!--<input type="search" class="config-direct-barra-pesquisa" value="<?php get_search_query() ?>" name="s" />-->
-                    <input type="search" class="config-direct-barra-pesquisa" value="<?php get_search_query() ?>" name="s" />
-                    <button type="button" class="config-botao-barra-pesquisa">Pesquisar</button>
+                    <input type="search" class="config-direct-barra-pesquisa" placeholder="Digite aqui sua pesquisa..." value="<?php get_search_query() ?>" name="s" />
+                    <button type="submit" class="config-botao-barra-pesquisa">Pesquisar</button>
                 </form>
             </div>
         </div>
@@ -22,15 +22,23 @@
 
         <?php 
 
-        if(isset($_GET['s'])) { ?>
+        if(isset($_GET['s']) ) {
 
-            <?php get_template_part( 'template-parts/content', 'search' ); ?>
+            if(!empty($_GET['s'])) {
 
-        <?php } else { ?>
+                get_template_part( 'template-parts/content', 'search' );    
 
-            <?php get_template_part( 'template-parts/content', 'none' ); ?>        
+            } else {
 
-        <?php } ?>
+                get_template_part( 'template-parts/content', 'none' ); 
+
+            }
+
+        } else { 
+
+            get_template_part( 'template-parts/content', 'none' ); 
+
+        } ?>
 
     </div>
 </div>

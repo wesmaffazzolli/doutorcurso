@@ -7,6 +7,27 @@
 
 /* =========== INÍCIO: FUNÇÕES DECLARADAS =============== */
 
+function getNivelBySlug($nivel) {
+    global $wpdb;
+
+    $query = "SELECT A.DESCR as nomeNivel ".
+              "FROM NIVEL A ".
+              "WHERE A.DESCR = '{$nivel}' ";
+
+    return $wpdb->get_var($query);
+}
+
+function getEscolaBySlug($escola) {
+global $wpdb;
+
+    $query = "SELECT A.DESCR as nomeEscola ".
+              "FROM ESCOLA A ".
+              "WHERE A.DESCR = '{$escola}' ";
+
+    return $wpdb->get_var($query);
+}
+
+
 function getAvaliacoesCurso($id_curso) {
     global $wpdb;
 
@@ -132,12 +153,11 @@ function getCourseById($param) {
 function getCoursesBySearchParam($param) {
     global $wpdb;
 
-    $cursos = $wpdb->get_results($wpdb->prepare(
-    "SELECT A.ID_CURSO as id_curso, C.ID_CAMPUS as id_campus " .
+    $cursos = $wpdb->get_results("SELECT A.ID_CURSO as id_curso, C.ID_CAMPUS as id_campus " .
     "FROM CURSO A, CAMPUS_CURSO B, CAMPUS C " .
-    "WHERE A.DESCR LIKE '%%s%' " .
+    "WHERE A.DESCR LIKE '%$param%' " .
     "AND A.ID_CURSO = B.ID_CURSO " .
-    "AND B.ID_CAMPUS = C.ID_CAMPUS ", $param));
+    "AND B.ID_CAMPUS = C.ID_CAMPUS ");
 
     return $cursos;
 }
@@ -146,15 +166,15 @@ function getCoursesByNivelAndEscola($parent, $slug) {
 
     global $wpdb;
 
-    $cursos = $wpdb->get_results($wpdb->prepare(
+    $cursos = $wpdb->get_results(
     "SELECT A.ID_CURSO as id_curso, C.ID_CAMPUS as id_campus " .
     "FROM CURSO A, CAMPUS_CURSO B, CAMPUS C, ESCOLA D, NIVEL E " .
     "WHERE A.ID_CURSO = B.ID_CURSO " .
     "AND B.ID_CAMPUS = C.ID_CAMPUS " .
     "AND A.ID_ESCOLA = D.ID_ESCOLA " .
-    "AND D.SLUG = '%s' " .
+    "AND D.SLUG = '{$slug}' " .
     "AND A.ID_NIVEL = E.ID_NIVEL " .
-    "AND E.SLUG = '%s' ", array($slug, $parent))); 
+    "AND E.SLUG = '{$parent}' "); 
 
     return $cursos;
 }

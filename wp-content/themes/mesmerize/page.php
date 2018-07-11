@@ -1,4 +1,4 @@
-<?php mesmerize_get_header(); ?>
+<?php get_header("custom");//mesmerize_get_header(); ?>
 
 <div class="page-content">
   <div class="<?php mesmerize_page_content_wrapper_class(); ?>">
@@ -15,7 +15,7 @@
 		if($parent == 'graduacao' || $parent == 'pos-graducao' || $parent == 'mestrado' || $parent == 'doutorado') { 
 
 			while ( have_posts() ) : the_post();
-		  		get_template_part( 'template-parts/content', 'search' );
+		  		get_template_part( 'template-parts/content', 'searchbycourse' );
 			endwhile;
 
 		} else if($parent == 'login') {
