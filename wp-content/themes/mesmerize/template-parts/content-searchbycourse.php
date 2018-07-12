@@ -2,8 +2,8 @@
 
 	$parent = getPostParent();
 	$slug = getPostSlug();
-	//$cursos = getCoursesByNivelAndEscola($parent, $slug);
-    $cursos = getCoursesByNivelAndEscola("graduacao", "direito");
+	$cursos = getCoursesByNivelAndEscola($parent, $slug);
+    //$cursos = getCoursesByNivelAndEscola("graduacao", "direito");
 
     $nivel = getNivelBySlug($parent);
     $escola = getEscolaBySlug($slug);
@@ -12,17 +12,28 @@
 		get_template_part( 'template-parts/content', 'none' );
 	} else { ?>
 
-	<span class="screen-reader-text"><?php _ex('Search for:', 'label', 'mesmerize'); ?></span>
+	<div class="container-fluid config-base-barra-pesquisa-geral">
+        <div class="row">
+            <div class="col-12">
+                <form role="search" method="get" class="config-form-barra-pesquisa" action="<?php esc_url(home_url('/'))?>">
+                    <!--<input type="search" class="config-direct-barra-pesquisa" value="<?php get_search_query() ?>" name="s" />-->
+                    <input type="search" class="config-direct-barra-pesquisa" placeholder="Digite aqui sua pesquisa..." value="<?php get_search_query() ?>" name="s" />
+                    <button type="submit" class="config-botao-barra-pesquisa">Pesquisar</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-	<div class="alert alert-info" role="alert">
-  		<?php if(count($cursos) > 1) {
-  			echo "<h5>".count($cursos)." cursos encontrados para {$nivel} em {$escola}...</h5>"; 	
-  		} else {
-  			echo "<h5>".count($cursos)." curso encontrado para {$nivel} em {$escola}...</h5>";
-  		}
-  		
-  		?>
-	</div>
+    <div class="container">
+		<div class="alert alert-info" role="alert">
+	  		<?php if(count($cursos) > 1) {
+	  			echo "<h5>".count($cursos)." cursos encontrados para {$nivel} em {$escola}...</h5>"; 	
+	  		} else {
+	  			echo "<h5>".count($cursos)." curso encontrado para {$nivel} em {$escola}...</h5>";
+	  		}
+	  		
+	  		?>
+		</div>
 
 		<?php foreach($cursos as $curso) { ?>
 
@@ -228,7 +239,7 @@
 	                        <div class="col-12">
 	                            <div class="row no-gutter alinhamento">
 	                                <div class="col-12">
-	                                    <a href="curso?c_id=<?php echo $curso->id_curso; ?>" class="btn btn-success fluid-size">TENHO INTERESSE</a>
+	                                    <a href="/curso?c_id=<?php echo $curso->id_curso; ?>" class="btn btn-success fluid-size">TENHO INTERESSE</a>
 	                                </div>
 	                            </div>
 	                        </div>
@@ -237,5 +248,6 @@
 	            </div>
 	        </div>
 	    </div>
+	  </div>
 	  <?php } ?> <!-- for each statement -->
   <?php } ?> <!-- if statement array length == 0 -->

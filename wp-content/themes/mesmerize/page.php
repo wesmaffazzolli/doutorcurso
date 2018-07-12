@@ -1,7 +1,7 @@
 <?php get_header("custom");//mesmerize_get_header(); ?>
 
 <div class="page-content">
-  <div class="<?php mesmerize_page_content_wrapper_class(); ?>">
+  <!--<div class="<?php mesmerize_page_content_wrapper_class(); ?>">-->
    <?php
 	/* is it a page */
 	if(is_page()) {
@@ -32,7 +32,7 @@
 
 		}
     } ?> <!-- Is page if statement -->
-  </div>
+  <!--</div>-->
 </div>
 
 <?php get_footer(); ?>
