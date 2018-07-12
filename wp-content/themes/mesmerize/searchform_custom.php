@@ -2,7 +2,7 @@
 
     <label>
 
-        <span class="screen-reader-text"><?php _ex('Search for:', 'label', 'mesmerize'); ?></span>
+        <!--<span class="screen-reader-text"><?php //_ex('Search for:', 'label', 'mesmerize'); ?></span>-->
 
         <input type="search" class="search-field" placeholder="<?php esc_attr_e('Search &hellip;', 'mesmerize'); ?>" value="<?php echo get_search_query(); ?>" name="s"/>
 

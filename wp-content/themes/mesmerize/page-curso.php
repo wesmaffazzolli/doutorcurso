@@ -1,4 +1,4 @@
-<?php get_header("curso");?>
+<?php get_header("custom");?>
 
 <div class="page-content">
   
