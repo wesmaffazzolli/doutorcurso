@@ -19,7 +19,7 @@
         foreach($cursos as $curso) { ?>
 
         <div class="row titulo-geral">
-            <div class="col-sm-10">
+            <div class="col-lg-10">
                 <h2><?php echo getNomeCurso($curso->id_curso); ?></h2>
                 <h5><?php echo getInfoTableById("INSTITUICAO", "DESCR", getInfoTableById("CAMPUS", "ID_INSTITUICAO", $curso->id_campus, true), true). " - ".getInfoTableById("INSTITUICAO", "DESCRSHORT", getInfoTableById("CAMPUS", "ID_INSTITUICAO", $curso->id_campus, true), true); ?></h5>
                 <p class="text-secondary instituicao-endereco">
@@ -33,8 +33,8 @@
                     getInfoTableById("ESTADO", "UF", getInfoTableById("CIDADE", "ID_ESTADO", getInfoTableById("CAMPUS", "ID_CIDADE", $curso->id_campus, true), false), false); ?>
                 </p>
             </div>
-            <div class="col-sm-2">
-                <a href="querosabermais/?c_id=<?php echo $curso->id_curso; ?>" class="btn btn-success fluid-size">QUERO SABER MAIS ></a>
+            <div class="col-lg-2">
+                <a href="querosabermais/?c_id=<?php echo $curso->id_curso; ?>" class="btn btn-success fluid-size">QUERO SABER MAIS</a>
             </div>
         </div>
 
@@ -182,7 +182,7 @@
                                             <?php } ?>
                                         </div>
                                     </div>
-                                    <div class="row align-items-center espacamento-notas-visao-geral">
+                                    <div class="row align-items-center espacamento-notas-visao-geral espacamento-fundo">
                                         <div class="col-4 col-md-8">
                                             <p>Dupla Diplomação:</p>
                                         </div>
@@ -246,20 +246,31 @@
         <div class="row">
             <div class="card border-dark mb-3" style="padding: 0px 0px;">
                 <div class="card-header">
-                    <h4 class="titulo-grande">Avaliações</h4>
+                    <h4>Avaliações</h4>
                 </div>
                 <div class="container">
                     <div class="card-block">                        
                         <div class="row titulo-indice">
-                            <div class="col-12" style="border: 1px solid red;">
-                                <?php $num_avaliacoes = getNumAvaliacoes($curso->id_curso); ?>
-                                <h4 style="display: inline; ">Índice de recomendação dos alunos:</h4>
-                                <span class="fa fa-star checked estrelas" style="color: orange;"></span>
-                                <span class="fa fa-star checked estrelas" style="color: orange;"></span>
-                                <span class="fa fa-star checked estrelas" style="color: orange;"></span>
-                                <span class="fa fa-star estrelas"></span>
-                                <span class="fa fa-star estrelas"></span>
-                                <?php echo "<span style='display:inline;'> $num_avaliacoes Avaliações</span>"; ?>
+                            <div class="col-12">
+                                <?php $num_avaliacoes = getNumAvaliacoes($curso->id_curso); 
+                                $media_estrelas = getMediaEstrelas($curso->id_curso, $num_avaliacoes); ?>
+                                <h4 class="titulo-avaliacoes">Índice de recomendação dos alunos:</h4>
+
+                                <?php 
+
+                                //Código que preenche as estrelas
+                                for($i = 1; $i <= $media_estrelas; $i++) {
+                                    echo "<span class=\"fa fa-star checked estrelas\" style=\"color: orange;\"></span>";
+                                }
+
+                                for($j = $media_estrelas; $j <= 5; $j++) {
+                                    echo "<span class=\"fa fa-star estrelas\" style=\"color: black;\"></span>";   
+                                }
+
+                                ?>
+
+                                <?php echo "<span class='badge badge-light num-avaliacoes'>$num_avaliacoes Avaliações</span>"; ?>
+                                <?php //echo "Média das estrelas é: $media_estrelas"; ?>
                             </div>
                         </div>
                         <div class="row">
@@ -379,7 +390,7 @@
                         <div class="col-12">
                             <div class="row no-gutter alinhamento">
                                 <div class="col-12">
-                                    <a href="avaliar?c_id=<?php echo $curso->id_curso; ?>" class="btn btn-success fluid-size">AVALIE ></a>
+                                    <a href="avaliar?c_id=<?php echo $curso->id_curso; ?>" class="btn btn-success fluid-size">AVALIAR CURSO</a>
                                 </div>
                             </div>
                         </div>
@@ -391,7 +402,7 @@
         <div class="row">
             <div class="card border-dark mb-3" style="padding: 0px 0px;">
                 <div class="card-header">
-                    <h4 class="titulo-grande">Comentários</h4>
+                    <h4>Comentários</h4>
                 </div>
                 <div class="container">
                     <div class="card-block">                        
@@ -401,7 +412,7 @@
                         foreach ($avaliacoes as $avaliacao) { ?>
 
                           <li class="media">
-                            <img class="mr-3" src="https://bowdaa.com/images/membersprofilepic/noprofilepicture.gif" alt="Generic placeholder image" style="width: 50px; height: 50px;">
+                            <img class="imagem-comentario" src="/wp-content/themes/mesmerize/img/user.png" />
                             <div class="media-body">
                                 <?php for($i = 0; $i < $avaliacao->recomendacao; $i++) { ?> 
                                     <span class="fa fa-star checked" style="color: orange;"></span>

@@ -7,6 +7,23 @@
 
 /* =========== INÍCIO: FUNÇÕES DECLARADAS =============== */
 
+function getMediaEstrelas($idCurso, $numAvaliacoes) {
+    global $wpdb;
+
+    if($numAvaliacoes != 0) {
+        $query = "SELECT SUM(A.RECOMENDACAO_NPS) ".
+                  "FROM AVALIACAO A ".
+                  "WHERE A.ID_CURSO = '{$idCurso}' ";
+
+        $soma = $wpdb->get_var($query);
+        $media = $soma/$numAvaliacoes;
+        return $media;
+    }
+
+    return 0;
+}
+
+
 function getNivelBySlug($nivel) {
     global $wpdb;
 

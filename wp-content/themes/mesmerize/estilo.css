@@ -121,10 +121,26 @@ input.search, input[type="search"] {
 
 .estrelas {
     font-size: 24px;
+    letter-spacing: 5px !important;
+    margin-left: 10px;
 }
 
+.num-avaliacoes {
+    font-size: 20px; 
+    width: auto;
+}
+
+.titulo-avaliacoes {
+    display: inline;
+}
+
+.imagem-comentario {
+    width: 100px;
+    height: auto;
+}
 
 /* Página de Apresentação do curso - END */
+
 
 /* Box do curso - BEGIN */
 .titulo-box {
@@ -218,11 +234,6 @@ input.search, input[type="search"] {
         text-align: center;
     }
 
-    .fluid-size {
-        margin-top: 20px;
-        width: 100%;
-    }
-
     .instituicao-endereco {
         font-size: 14px !important;
     }
@@ -237,6 +248,35 @@ input.search, input[type="search"] {
         padding-left: 20%;
         padding-right: 20%;
         padding-bottom: 40px;
+    }
+
+    .estrelas {
+        font-size: 20px;
+        letter-spacing: 2px !important;
+        margin-left: 5px;
+        margin-top: 10px;
+    }
+
+    .num-avaliacoes {
+        font-size: 18px; 
+        width: auto;
+    }
+
+    .titulo-geral {
+        margin: 50px 0;
+    }
+
+}
+
+/* xs < 1024 */
+@media screen and (max-width: 1024px) {
+    .titulo-avaliacoes {
+        display: block;
+    }
+
+    .fluid-size {
+        margin-top: 20px;
+        width: 100%;
     }
 }
 
