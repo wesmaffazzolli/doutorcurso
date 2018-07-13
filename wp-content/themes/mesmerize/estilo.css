@@ -87,6 +87,45 @@ input.search, input[type="search"] {
     font-weight: 500 !important;
 }
 
+/* Página de Apresentação do curso - BEGIN */
+
+.titulo-geral {
+    margin: 30px 0;
+}
+
+.espacamento-visao-geral {
+    margin-top: 15px;
+}
+
+.espacamento-fundo {
+    margin-bottom: 15px;   
+}
+
+.espacamento-notas-visao-geral {
+    margin-top: 15px;
+    vertical-align: center;
+}
+
+.espacamento-titulos-avaliacoes {
+    margin-top: 30px;
+}
+
+.config-badge-curso {
+    font-size: 14px;
+    width: 50px;
+}
+
+.titulo-indice {
+    margin-top: 20px;
+}
+
+.estrelas {
+    font-size: 24px;
+}
+
+
+/* Página de Apresentação do curso - END */
+
 /* Box do curso - BEGIN */
 .titulo-box {
     font-size: 18px;
@@ -180,6 +219,7 @@ input.search, input[type="search"] {
     }
 
     .fluid-size {
+        margin-top: 20px;
         width: 100%;
     }
 

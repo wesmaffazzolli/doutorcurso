@@ -193,6 +193,18 @@ function getInfoTableByIdNn($tabela, $nomeColuna, $nomeColunaComparacao, $id) {
     return $result;
 }
 
+function getNomeCurso($idCurso) {
+
+    global $wpdb;
+
+    $query = "SELECT DESCR ".
+             "FROM CURSO A ".
+             "WHERE A.ID_CURSO = {$idCurso} ";
+
+    return $wpdb->get_var($query);
+
+}
+
 function getInfoTableById($tabela, $nomeColuna, $id, $ativo) {
     global $wpdb;
     $result = "";
