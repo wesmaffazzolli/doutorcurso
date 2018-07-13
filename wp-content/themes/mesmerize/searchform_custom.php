@@ -7,7 +7,8 @@
         <input type="search" class="search-field" placeholder="<?php esc_attr_e('Search &hellip;', 'mesmerize'); ?>" value="<?php echo get_search_query(); ?>" name="s"/>
 
     </label>
-    <span><input type="submit" class="search-submit" value="Pesquisar" /></span>
+
+    <button type="submit" class="btn btn-primary botao-pesquisa-main"><i class="fas fa-search"></i> Pesquisar</button>
 
 </form>
 
