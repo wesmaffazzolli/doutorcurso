@@ -48,10 +48,10 @@ global $wpdb;
 function getAvaliacoesCurso($id_curso) {
     global $wpdb;
 
-    $query = "SELECT A.COMENTARIO as comentario, A.RECOMENDACAO_NPS as recomendacao ".
+    $query = "SELECT A.COMENTARIO as comentario, A.RECOMENDACAO_NPS as recomendacao, A.ID_USUARIO as id_usuario, A.DATA_HORA as data_hora ".
               "FROM AVALIACAO A ".
               "WHERE A.ID_CURSO = '{$id_curso}' ".
-              "ORDER BY A.DATA_HORA DESC ";
+              "ORDER BY A.DATA_HORA ASC ";
 
     return $wpdb->get_results($query);
 }

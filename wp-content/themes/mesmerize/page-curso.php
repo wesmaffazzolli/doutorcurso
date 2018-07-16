@@ -51,10 +51,10 @@
 
                                 <div class="col-12 col-md-4">
                                     <div class="row espacamento-visao-geral">
-                                        <div class="col-4 col-md-6">
+                                        <div class="col-6 col-md-6">
                                             <p>Formação:</p>
                                         </div>
-                                        <div class="col-8 col-md-6">
+                                        <div class="col-6 col-md-6">
                                             <?php if(!empty(getInfoTableById("NIVEL", "DESCR", getInfoTableById("CURSO", "ID_NIVEL", $curso->id_curso, true), false))) { ?>
                                                 <p class="marcacao-padrao"><?php echo getInfoTableById("NIVEL", "DESCR", getInfoTableById("CURSO", "ID_NIVEL", $curso->id_curso, true), false); ?></p>
                                             <?php } else { ?>
@@ -63,10 +63,10 @@
                                         </div>
                                     </div>
                                     <div class="row espacamento-visao-geral">
-                                        <div class="col-4 col-md-6">
+                                        <div class="col-6 col-md-6">
                                             <p>Titulação:</p>
                                         </div>
-                                        <div class="col-8 col-md-6">
+                                        <div class="col-6 col-md-6">
                                              <?php $titulacao = getInfoTableById("TITULO", "DESCR", getInfoTableByIdNn("CURSO_TITULO", "ID_TITULO", "ID_CURSO", $curso->id_curso), false);
                                              if(!empty($titulacao)) { ?>
                                                 <p class="marcacao-padrao"><?php echo $titulacao;?></p>
@@ -76,10 +76,10 @@
                                         </div>
                                     </div>
                                     <div class="row espacamento-visao-geral">
-                                        <div class="col-4 col-md-6">
+                                        <div class="col-6 col-md-6">
                                             <p>Modalidade:</p>
                                         </div>
-                                        <div class="col-8 col-md-6">
+                                        <div class="col-6 col-md-6">
                                             <?php $modalidade = getInfoTableById("MODALIDADE", "DESCR", getInfoTableByIdNn("CURSO_MODALIDADE", "ID_MODALIDADE", "ID_CURSO", $curso->id_curso), false);  
                                             if(!empty($modalidade)) { ?>
                                                 <p class="marcacao-padrao"><?php echo $modalidade;?></p>
@@ -89,10 +89,10 @@
                                         </div>
                                     </div>
                                      <div class="row espacamento-visao-geral espacamento-fundo">
-                                        <div class="col-4 col-md-6">
+                                        <div class="col-6 col-md-6">
                                             <p>Duração:</p>
                                         </div>
-                                        <div class="col-8 col-md-6">
+                                        <div class="col-6 col-md-6">
                                             <?php $duracao = getInfoTableById("CURSO", "DURACAO", $curso->id_curso, true);
                                             if(!empty($duracao)) { ?>
                                                 <p class="marcacao-padrao"><?php echo $duracao." Semestres";?></p>
@@ -106,10 +106,10 @@
 
                                 <div class="col-12 col-md-4">
                                     <div class="row espacamento-notas-visao-geral">
-                                        <div class="col-4 col-md-7">
+                                        <div class="col-6 col-md-7">
                                             <p>Financiamento:</p>
                                         </div>
-                                        <div class="col-8 col-md-5">
+                                        <div class="col-6 col-md-5">
                                             <?php if(isFinancimento($curso->id_campus)) { ?>
                                                 <p><span class="badge badge-primary config-badge-curso"><?php echo "SIM";?></span></p>    
                                             <?php } else { ?>
@@ -118,10 +118,10 @@
                                         </div>
                                     </div>
                                     <div class="row align-items-center espacamento-notas-visao-geral">
-                                        <div class="col-4 col-md-7">
+                                        <div class="col-6 col-md-7">
                                             <p>Diploma:</p>
                                         </div>
-                                        <div class="col-8 col-md-5">
+                                        <div class="col-6 col-md-5">
                                             <?php if(existeStatusTabelaColunaPorId("CURSO", "DIPLOMA", "S", $curso->id_curso)) { ?>
                                                 <p><span class="badge badge-primary config-badge-curso"><?php echo "SIM";?></span></p>
                                             <?php } else { ?>
@@ -130,10 +130,10 @@
                                         </div>
                                     </div>
                                     <div class="row align-items-center espacamento-notas-visao-geral">
-                                        <div class="col-4 col-md-7">
+                                        <div class="col-6 col-md-7">
                                             <p>Certificado:</p>
                                         </div>
-                                        <div class="col-8 col-md-5">
+                                        <div class="col-6 col-md-5">
                                             <?php if(existeStatusTabelaColunaPorId("CURSO", "CERTIFICADO", "S", $curso->id_curso)) { ?>
                                                 <p><span class="badge badge-primary config-badge-curso"><?php echo "SIM";?></span></p>
                                             <?php } else { ?>
@@ -142,10 +142,10 @@
                                         </div>
                                     </div>
                                     <div class="row align-items-center espacamento-notas-visao-geral">
-                                        <div class="col-4 col-md-7">
+                                        <div class="col-6 col-md-7">
                                             <p>Estacionamento:</p>
                                         </div>
-                                        <div class="col-8 col-md-5">
+                                        <div class="col-6 col-md-5">
                                             <?php if(existeStatusTabelaColunaPorId("CAMPUS", "ESTACIONAMENTO", "S", $curso->id_campus)) { ?>
                                                 <p><span class="badge badge-primary config-badge-curso"><?php echo "SIM";?></span></p>
                                             <?php } else { ?>
@@ -159,10 +159,10 @@
 
                                 <div class="col-12 col-md-4">
                                     <div class="row espacamento-notas-visao-geral">
-                                        <div class="col-4 col-md-8"">
+                                        <div class="col-6 col-md-8"">
                                             <p>Intercâmbio:</p>
                                         </div>
-                                        <div class="col-8 col-md-4">
+                                        <div class="col-6 col-md-4">
                                             <?php if(existeStatusTabelaColunaPorId("CURSO", "INTERCAMBIO", "S", $curso->id_curso)) { ?>
                                                 <p><span class="badge badge-primary config-badge-curso"><?php echo "SIM";?></span></p>    
                                             <?php } else { ?>
@@ -171,10 +171,10 @@
                                         </div>
                                     </div>
                                     <div class="row align-items-center espacamento-notas-visao-geral">
-                                        <div class="col-4 col-md-8">
+                                        <div class="col-6 col-md-8">
                                             <p>Módulo Internacional:</p>
                                         </div>
-                                        <div class="col-8 col-md-4">
+                                        <div class="col-6 col-md-4">
                                             <?php if(existeStatusTabelaColunaPorId("CURSO", "MODULO_INTERNACIONAL", "S", $curso->id_curso)) { ?>
                                                 <p><span class="badge badge-primary config-badge-curso"><?php echo "SIM";?></span></p>
                                             <?php } else { ?>
@@ -183,10 +183,10 @@
                                         </div>
                                     </div>
                                     <div class="row align-items-center espacamento-notas-visao-geral espacamento-fundo">
-                                        <div class="col-4 col-md-8">
+                                        <div class="col-6 col-md-8">
                                             <p>Dupla Diplomação:</p>
                                         </div>
-                                        <div class="col-8 col-md-4">
+                                        <div class="col-6 col-md-4">
                                             <?php if(existeStatusTabelaColunaPorId("CURSO", "DUPLA_DIPLOMACAO", "S", $curso->id_curso)) { ?>
                                                 <p><span class="badge badge-primary config-badge-curso"><?php echo "SIM";?></span></p>
                                             <?php } else { ?>
@@ -400,33 +400,44 @@
         </div>
 
         <div class="row">
-            <div class="card border-dark mb-3" style="padding: 0px 0px;">
-                <div class="card-header">
-                    <h4>Comentários</h4>
-                </div>
-                <div class="container">
-                    <div class="card-block">                        
-                        <ul class="list-unstyled">
+            <h4 class="titulo-secao-comentarios">Comentários e Avaliações</h4>
+            <div class="col-sm-12">
 
-                        <?php
-                        foreach ($avaliacoes as $avaliacao) { ?>
+                <?php
+                foreach ($avaliacoes as $avaliacao) { 
 
-                          <li class="media">
-                            <img class="imagem-comentario" src="/wp-content/themes/mesmerize/img/user.png" />
-                            <div class="media-body">
-                                <?php for($i = 0; $i < $avaliacao->recomendacao; $i++) { ?> 
+                um_fetch_user($avaliacao->id_usuario);
+
+                ?>
+
+                <div class="panel panel-white post panel-shadow espacamento-box-comentario">
+                    <div class="post-heading">
+                        <div class="pull-left image">
+                            <img src="/wp-content/themes/mesmerize/img/mascote.png" class="img-circle avatar" alt="user profile image">
+                        </div>
+                        <div class="pull-left meta">
+                            <div class="title h5">
+                                <b><?php echo um_user('display_name'); ?></b>                                
+                                <?php for($i = 1; $i <= $avaliacao->recomendacao; $i++) { ?> 
                                     <span class="fa fa-star checked" style="color: orange;"></span>
                                 <?php } ?>
-                              <h5 class="mt-0 mb-1">Comentário:</h5>
-                                <?php echo $avaliacao->comentario; ?>
+                                <?php for($k = $avaliacao->recomendacao; $k < 5; $k++) { ?> 
+                                    <span class="fa fa-star" style="color: black;"></span>
+                                <?php } ?>
                             </div>
-                          </li>
-
-                        <?php } ?>
-
-                        </ul>
+                            <?php 
+                                $date = new DateTime($avaliacao->data_hora);
+                            ?>
+                            <h6 class="text-muted time"><?php echo $date->format('d/m/Y H:i'); ?></h6>
+                        </div>
+                    </div> 
+                    <div class="post-description"> 
+                        <p><?php echo $avaliacao->comentario; ?></p>
                     </div>
                 </div>
+
+                <?php } ?>
+
             </div>
         </div>
 
