@@ -12,7 +12,7 @@ function getMediaEstrelas($idCurso, $numAvaliacoes) {
 
     if($numAvaliacoes != 0) {
         $query = "SELECT SUM(A.RECOMENDACAO_NPS) ".
-                  "FROM AVALIACAO A ".
+                  "FROM avaliacao A ".
                   "WHERE A.ID_CURSO = '{$idCurso}' ";
 
         $soma = $wpdb->get_var($query);
@@ -28,7 +28,7 @@ function getNivelBySlug($nivel) {
     global $wpdb;
 
     $query = "SELECT A.DESCR as nomeNivel ".
-              "FROM NIVEL A ".
+              "FROM nivel A ".
               "WHERE A.DESCR = '{$nivel}' ";
 
     return $wpdb->get_var($query);
@@ -38,7 +38,7 @@ function getEscolaBySlug($escola) {
 global $wpdb;
 
     $query = "SELECT A.DESCR as nomeEscola ".
-              "FROM ESCOLA A ".
+              "FROM escola A ".
               "WHERE A.DESCR = '{$escola}' ";
 
     return $wpdb->get_var($query);
@@ -49,7 +49,7 @@ function getAvaliacoesCurso($id_curso) {
     global $wpdb;
 
     $query = "SELECT A.COMENTARIO as comentario, A.RECOMENDACAO_NPS as recomendacao, A.ID_USUARIO as id_usuario, A.DATA_HORA as data_hora ".
-              "FROM AVALIACAO A ".
+              "FROM avaliacao A ".
               "WHERE A.ID_CURSO = '{$id_curso}' ".
               "ORDER BY A.DATA_HORA ASC ";
 
@@ -60,7 +60,7 @@ function getIdUltimoPost() {
     global $wpdb;
 
     $query = "SELECT A.ID ".
-              "FROM WP_POSTS A, WP_POSTMETA B ".
+              "FROM wp_posts A, wp_postmeta B ".
               "WHERE A.POST_TYPE = 'nf_sub' ". 
               "AND A.POST_DATE = (SELECT MAX(C.POST_DATE) FROM WP_POSTS C) ".
               "AND A.ID = B.POST_ID ".
@@ -123,7 +123,7 @@ function montaArrayAvaliacoes($post_id) {
 function getAvaliacao($postId, $field) {
     global $wpdb;
 
-    $result = $wpdb->get_var("SELECT A.META_VALUE FROM WP_POSTMETA A WHERE A.POST_ID = {$postId} AND A.META_KEY = '{$field}' ");
+    $result = $wpdb->get_var("SELECT A.META_VALUE FROM wp_postmeta A WHERE A.POST_ID = {$postId} AND A.META_KEY = '{$field}' ");
     return $result;
 }
 
@@ -132,7 +132,7 @@ function calculaAvaliacoes($idCurso, $nomeColuna) {
 
     $soma = $wpdb->get_var($wpdb->prepare(
     "SELECT SUM({$nomeColuna}) as soma " .
-    "FROM AVALIACAO A " .
+    "FROM avaliacao A " .
     "WHERE A.ID_CURSO = '%s' ", $idCurso));
 
     $num_avaliacoes = getNumAvaliacoes($idCurso);
@@ -148,7 +148,7 @@ function getNumAvaliacoes($param) {
 
     $contagem = $wpdb->get_var($wpdb->prepare(
     "SELECT COUNT(*) as contagem " .
-    "FROM AVALIACAO A " .
+    "FROM avaliacao A " .
     "WHERE A.ID_CURSO = '%s' ", $param));
 
     return $contagem;
@@ -159,7 +159,7 @@ function getCourseById($param) {
 
     $cursos = $wpdb->get_results($wpdb->prepare(
     "SELECT A.ID_CURSO as id_curso, C.ID_CAMPUS as id_campus " .
-    "FROM CURSO A, CAMPUS_CURSO B, CAMPUS C " .
+    "FROM curso A, campus_curso B, campus C " .
     "WHERE A.ID_CURSO = '%s' " .
     "AND A.ID_CURSO = B.ID_CURSO " .
     "AND B.ID_CAMPUS = C.ID_CAMPUS ", $param));
@@ -171,7 +171,7 @@ function getCoursesBySearchParam($param) {
     global $wpdb;
 
     $cursos = $wpdb->get_results("SELECT A.ID_CURSO as id_curso, C.ID_CAMPUS as id_campus " .
-    "FROM CURSO A, CAMPUS_CURSO B, CAMPUS C " .
+    "FROM curso A, campus_curso B, campus C " .
     "WHERE A.DESCR LIKE '%$param%' " .
     "AND A.ID_CURSO = B.ID_CURSO " .
     "AND B.ID_CAMPUS = C.ID_CAMPUS ");
@@ -185,7 +185,7 @@ function getCoursesByNivelAndEscola($parent, $slug) {
 
     $cursos = $wpdb->get_results(
     "SELECT A.ID_CURSO as id_curso, C.ID_CAMPUS as id_campus " .
-    "FROM CURSO A, CAMPUS_CURSO B, CAMPUS C, ESCOLA D, NIVEL E " .
+    "FROM curso A, campus_curso B, campus C, escola D, nivel E " .
     "WHERE A.ID_CURSO = B.ID_CURSO " .
     "AND B.ID_CAMPUS = C.ID_CAMPUS " .
     "AND A.ID_ESCOLA = D.ID_ESCOLA " .
@@ -215,7 +215,7 @@ function getNomeCurso($idCurso) {
     global $wpdb;
 
     $query = "SELECT DESCR ".
-             "FROM CURSO A ".
+             "FROM curso A ".
              "WHERE A.ID_CURSO = {$idCurso} ";
 
     return $wpdb->get_var($query);
@@ -245,7 +245,7 @@ function getInfoCampusById($idCampus, $nomeColuna) {
 
     $result = $wpdb->get_var(
         "SELECT {$nomeColuna} ".
-        "FROM CAMPUS A ".
+        "FROM campus A ".
         "WHERE A.ID_CAMPUS = {$idCampus} ");
 
     return $result;
@@ -257,7 +257,7 @@ function getInfoCursoById($idCurso, $nomeColuna) {
 
     $result = $wpdb->get_var(
         "SELECT {$nomeColuna} ".
-        "FROM CURSO A ".
+        "FROM curso A ".
         "WHERE A.ID_CURSO = {$idCurso} ");
 
     return $result;
@@ -269,7 +269,7 @@ function getNomeCursoById($idCurso) {
 
     $result = $wpdb->get_var($wpdb->prepare(
         "SELECT DESCR ".
-        "FROM CURSO A ".
+        "FROM curso A ".
         "WHERE A.ID_CURSO = %s ", $idCurso));
 
     return $result;
@@ -308,7 +308,7 @@ function isFinancimento($idCampus) {
 
     $num_financiamento = $wpdb->get_var($wpdb->prepare(
         "SELECT COUNT(*) ".
-        "FROM CAMPUS_FINANCIAMENTO A ".
+        "FROM campus_financiamento A ".
         "WHERE A.ID_CAMPUS = %s ", $idCampus));
     if(empty($num_financiamento)) {
         return false;

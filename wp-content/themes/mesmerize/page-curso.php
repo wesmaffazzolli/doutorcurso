@@ -21,16 +21,16 @@
         <div class="row titulo-geral">
             <div class="col-lg-10">
                 <h2><?php echo getNomeCurso($curso->id_curso); ?></h2>
-                <h5><?php echo getInfoTableById("INSTITUICAO", "DESCR", getInfoTableById("CAMPUS", "ID_INSTITUICAO", $curso->id_campus, true), true). " - ".getInfoTableById("INSTITUICAO", "DESCRSHORT", getInfoTableById("CAMPUS", "ID_INSTITUICAO", $curso->id_campus, true), true); ?></h5>
+                <h5><?php echo getInfoTableById("instituicao", "DESCR", getInfoTableById("campus", "ID_INSTITUICAO", $curso->id_campus, true), true). " - ".getInfoTableById("instituicao", "DESCRSHORT", getInfoTableById("campus", "ID_INSTITUICAO", $curso->id_campus, true), true); ?></h5>
                 <p class="text-secondary instituicao-endereco">
                     <i class="material-icons icone-local">location_on</i>
-                    <?php echo getInfoTableById("CAMPUS", "ENDERECO", $curso->id_campus, true)
+                    <?php echo getInfoTableById("campus", "ENDERECO", $curso->id_campus, true)
                     ." - ".
-                    getInfoTableById("CAMPUS", "BAIRRO", $curso->id_campus, true)
+                    getInfoTableById("campus", "BAIRRO", $curso->id_campus, true)
                     ." - ".
-                    getInfoTableById("CIDADE", "DESCR", getInfoTableById("CAMPUS", "ID_CIDADE", $curso->id_campus, true), false)
+                    getInfoTableById("cidade", "DESCR", getInfoTableById("campus", "ID_CIDADE", $curso->id_campus, true), false)
                     ." - ".
-                    getInfoTableById("ESTADO", "UF", getInfoTableById("CIDADE", "ID_ESTADO", getInfoTableById("CAMPUS", "ID_CIDADE", $curso->id_campus, true), false), false); ?>
+                    getInfoTableById("estado", "UF", getInfoTableById("cidade", "ID_ESTADO", getInfoTableById("campus", "ID_CIDADE", $curso->id_campus, true), false), false); ?>
                 </p>
             </div>
             <div class="col-lg-2">
@@ -55,8 +55,8 @@
                                             <p>Formação:</p>
                                         </div>
                                         <div class="col-6 col-md-6">
-                                            <?php if(!empty(getInfoTableById("NIVEL", "DESCR", getInfoTableById("CURSO", "ID_NIVEL", $curso->id_curso, true), false))) { ?>
-                                                <p class="marcacao-padrao"><?php echo getInfoTableById("NIVEL", "DESCR", getInfoTableById("CURSO", "ID_NIVEL", $curso->id_curso, true), false); ?></p>
+                                            <?php if(!empty(getInfoTableById("nivel", "DESCR", getInfoTableById("curso", "ID_NIVEL", $curso->id_curso, true), false))) { ?>
+                                                <p class="marcacao-padrao"><?php echo getInfoTableById("nivel", "DESCR", getInfoTableById("curso", "ID_NIVEL", $curso->id_curso, true), false); ?></p>
                                             <?php } else { ?>
                                                 <p class="marcacao-padrao"><?php echo "-";?></p>
                                             <?php } ?>
@@ -67,7 +67,7 @@
                                             <p>Titulação:</p>
                                         </div>
                                         <div class="col-6 col-md-6">
-                                             <?php $titulacao = getInfoTableById("TITULO", "DESCR", getInfoTableByIdNn("CURSO_TITULO", "ID_TITULO", "ID_CURSO", $curso->id_curso), false);
+                                             <?php $titulacao = getInfoTableById("titulo", "DESCR", getInfoTableByIdNn("curso_titulo", "ID_TITULO", "ID_CURSO", $curso->id_curso), false);
                                              if(!empty($titulacao)) { ?>
                                                 <p class="marcacao-padrao"><?php echo $titulacao;?></p>
                                             <?php } else { ?>
@@ -80,7 +80,7 @@
                                             <p>Modalidade:</p>
                                         </div>
                                         <div class="col-6 col-md-6">
-                                            <?php $modalidade = getInfoTableById("MODALIDADE", "DESCR", getInfoTableByIdNn("CURSO_MODALIDADE", "ID_MODALIDADE", "ID_CURSO", $curso->id_curso), false);  
+                                            <?php $modalidade = getInfoTableById("modalidade", "DESCR", getInfoTableByIdNn("curso_modalidade", "ID_MODALIDADE", "ID_CURSO", $curso->id_curso), false);  
                                             if(!empty($modalidade)) { ?>
                                                 <p class="marcacao-padrao"><?php echo $modalidade;?></p>
                                             <?php } else { ?>
@@ -93,7 +93,7 @@
                                             <p>Duração:</p>
                                         </div>
                                         <div class="col-6 col-md-6">
-                                            <?php $duracao = getInfoTableById("CURSO", "DURACAO", $curso->id_curso, true);
+                                            <?php $duracao = getInfoTableById("curso", "DURACAO", $curso->id_curso, true);
                                             if(!empty($duracao)) { ?>
                                                 <p class="marcacao-padrao"><?php echo $duracao." Semestres";?></p>
                                             <?php } else { ?>
@@ -122,7 +122,7 @@
                                             <p>Diploma:</p>
                                         </div>
                                         <div class="col-6 col-md-5">
-                                            <?php if(existeStatusTabelaColunaPorId("CURSO", "DIPLOMA", "S", $curso->id_curso)) { ?>
+                                            <?php if(existeStatusTabelaColunaPorId("curso", "DIPLOMA", "S", $curso->id_curso)) { ?>
                                                 <p><span class="badge badge-primary config-badge-curso"><?php echo "SIM";?></span></p>
                                             <?php } else { ?>
                                                 <p><span class="badge badge-secondary config-badge-curso"><?php echo "NÃO";?></span></p>
@@ -134,7 +134,7 @@
                                             <p>Certificado:</p>
                                         </div>
                                         <div class="col-6 col-md-5">
-                                            <?php if(existeStatusTabelaColunaPorId("CURSO", "CERTIFICADO", "S", $curso->id_curso)) { ?>
+                                            <?php if(existeStatusTabelaColunaPorId("curso", "CERTIFICADO", "S", $curso->id_curso)) { ?>
                                                 <p><span class="badge badge-primary config-badge-curso"><?php echo "SIM";?></span></p>
                                             <?php } else { ?>
                                                 <p><span class="badge badge-secondary config-badge-curso"><?php echo "NÃO";?></span></p>
@@ -146,7 +146,7 @@
                                             <p>Estacionamento:</p>
                                         </div>
                                         <div class="col-6 col-md-5">
-                                            <?php if(existeStatusTabelaColunaPorId("CAMPUS", "ESTACIONAMENTO", "S", $curso->id_campus)) { ?>
+                                            <?php if(existeStatusTabelaColunaPorId("campus", "ESTACIONAMENTO", "S", $curso->id_campus)) { ?>
                                                 <p><span class="badge badge-primary config-badge-curso"><?php echo "SIM";?></span></p>
                                             <?php } else { ?>
                                                 <p><span class="badge badge-secondary config-badge-curso"><?php echo "NÃO";?></span></p>
@@ -163,7 +163,7 @@
                                             <p>Intercâmbio:</p>
                                         </div>
                                         <div class="col-6 col-md-4">
-                                            <?php if(existeStatusTabelaColunaPorId("CURSO", "INTERCAMBIO", "S", $curso->id_curso)) { ?>
+                                            <?php if(existeStatusTabelaColunaPorId("curso", "INTERCAMBIO", "S", $curso->id_curso)) { ?>
                                                 <p><span class="badge badge-primary config-badge-curso"><?php echo "SIM";?></span></p>    
                                             <?php } else { ?>
                                                 <p><span class="badge badge-secondary config-badge-curso"><?php echo "NÃO";?></span></p>
@@ -175,10 +175,10 @@
                                             <p>Módulo Internacional:</p>
                                         </div>
                                         <div class="col-6 col-md-4">
-                                            <?php if(existeStatusTabelaColunaPorId("CURSO", "MODULO_INTERNACIONAL", "S", $curso->id_curso)) { ?>
+                                            <?php if(existeStatusTabelaColunaPorId("curso", "MODULO_INTERNACIONAL", "S", $curso->id_curso)) { ?>
                                                 <p><span class="badge badge-primary config-badge-curso"><?php echo "SIM";?></span></p>
                                             <?php } else { ?>
-                                                <p><span class="badge label-secondary config-badge-curso"><?php echo "NÃO";?></span></p>
+                                                <p><span class="badge badge-secondary config-badge-curso"><?php echo "NÃO";?></span></p>
                                             <?php } ?>
                                         </div>
                                     </div>
@@ -187,7 +187,7 @@
                                             <p>Dupla Diplomação:</p>
                                         </div>
                                         <div class="col-6 col-md-4">
-                                            <?php if(existeStatusTabelaColunaPorId("CURSO", "DUPLA_DIPLOMACAO", "S", $curso->id_curso)) { ?>
+                                            <?php if(existeStatusTabelaColunaPorId("curso", "DUPLA_DIPLOMACAO", "S", $curso->id_curso)) { ?>
                                                 <p><span class="badge badge-primary config-badge-curso"><?php echo "SIM";?></span></p>
                                             <?php } else { ?>
                                                 <p><span class="badge badge-secondary config-badge-curso"><?php echo "NÃO";?></span></p>
@@ -216,8 +216,8 @@
                                 <p>Nota Curso (CPC):</p>
                             </div>
                             <div class="col-6 col-md-8">
-                                <?php if(!empty(getInfoTableById("CURSO", "CPC", $curso->id_curso, true))) { ?>
-                                    <p><span class="badge badge-primary config-badge-curso"><?php echo getInfoTableById("CURSO", "CPC", $curso->id_curso, true);?></span></p>    
+                                <?php if(!empty(getInfoTableById("curso", "CPC", $curso->id_curso, true))) { ?>
+                                    <p><span class="badge badge-primary config-badge-curso"><?php echo getInfoTableById("curso", "CPC", $curso->id_curso, true);?></span></p>    
                                 <?php } else { ?>
                                     <p><span class="badge badge-primary config-badge-curso"><?php echo "-";?></span></p>
                                 <?php } ?>
@@ -228,8 +228,8 @@
                                 <p>Nota Instituição de ensino (IGC):</p>
                             </div>
                             <div class="col-6 col-md-8">
-                                <?php if(!empty(getInfoTableById("INSTITUICAO", "IGC", getInfoTableById("CAMPUS", "ID_INSTITUICAO", $curso->id_campus, true), true))) { ?>
-                                    <p><span class="badge badge-primary config-badge-curso"><?php echo getInfoTableById("INSTITUICAO", "IGC", getInfoTableById("CAMPUS", "ID_INSTITUICAO", $curso->id_campus, true), true); ?></span></p>
+                                <?php if(!empty(getInfoTableById("instituicao", "IGC", getInfoTableById("campus", "ID_INSTITUICAO", $curso->id_campus, true), true))) { ?>
+                                    <p><span class="badge badge-primary config-badge-curso"><?php echo getInfoTableById("instituicao", "IGC", getInfoTableById("campus", "ID_INSTITUICAO", $curso->id_campus, true), true); ?></span></p>
                                 <?php } else { ?>
                                     <p><span class="badge badge-primary config-badge-curso"><?php echo "-";?></span></p>
                                 <?php } ?>
@@ -263,7 +263,7 @@
                                     echo "<span class=\"fa fa-star checked estrelas\" style=\"color: orange;\"></span>";
                                 }
 
-                                for($j = $media_estrelas; $j <= 5; $j++) {
+                                for($j = $media_estrelas; $j < 5; $j++) {
                                     echo "<span class=\"fa fa-star estrelas\" style=\"color: black;\"></span>";   
                                 }
 
@@ -404,9 +404,16 @@
             <div class="col-sm-12">
 
                 <?php
+
+                $num_avaliacoes = getNumAvaliacoes($curso->id_curso);
+
+                //echo $num_avaliacoes;
+
+                if($num_avaliacoes != "0") {
+
                 foreach ($avaliacoes as $avaliacao) { 
 
-                um_fetch_user($avaliacao->id_usuario);
+                    um_fetch_user($avaliacao->id_usuario);
 
                 ?>
 
@@ -436,7 +443,11 @@
                     </div>
                 </div>
 
-                <?php } ?>
+                <?php } } else {
+
+                    echo "<h6 style='margin-top:20px;'>Ainda não há avaliações para este curso. <a href='/login'>Faça login e seja o primeiro!</a></h6>";
+
+                } ?>
 
             </div>
         </div>

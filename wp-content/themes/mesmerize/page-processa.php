@@ -16,7 +16,7 @@
       if(isset($_COOKIE['user_location'])) {
         header("Location: ".$_COOKIE['user_location']);
       } else {
-        header("Location: http://localhost");
+        header("Location: http://www.doutorcurso.com.br");
       }
     } else {
       header("Location: ".$_COOKIE['user_location']);
