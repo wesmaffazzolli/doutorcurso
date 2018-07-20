@@ -32,7 +32,6 @@
 
 		}
     } ?> <!-- Is page if statement -->
-  <!--</div>-->
 </div>
 
 <?php get_footer(); ?>
