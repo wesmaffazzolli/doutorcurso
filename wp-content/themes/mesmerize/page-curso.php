@@ -7,11 +7,12 @@
         <?php 
         global $wpdb;
 
-        if(isset($_GET['c_id'])) {
-            $param = $_GET['c_id'];
-            $cursos = getCourseById($param);
-            $avaliacoes = getAvaliacoesCurso($param);
-            setcookie("user_location", get_permalink()."?c_id=".$param, time()+3600, "/", "localhost");
+        if(isset($_GET['c_id']) && isset($_GET['cmp_id'])) {
+            $paramIdCurso = $_GET['c_id'];
+            $paramIdCampus = $_GET['cmp_id'];
+            $cursos = getCourseById($paramIdCurso, $paramIdCampus);
+            $avaliacoes = getAvaliacoesCurso($paramIdCurso);
+            setcookie("user_location", get_permalink()."?c_id=".$paramIdCurso."&cmp_id=".$paramIdCampus, time()+3600, "/", "localhost");
         } else {
             get_template_part( 'template-parts/content', 'none' );
         }

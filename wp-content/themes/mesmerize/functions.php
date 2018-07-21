@@ -154,15 +154,18 @@ function getNumAvaliacoes($param) {
     return $contagem;
 }
 
-function getCourseById($param) {
+function getCourseById($paramIdCurso, $paramIdCampus) {
     global $wpdb;
+
+    $arrayParams = array($paramIdCurso, $paramIdCampus);
 
     $cursos = $wpdb->get_results($wpdb->prepare(
     "SELECT A.ID_CURSO as id_curso, C.ID_CAMPUS as id_campus " .
     "FROM curso A, campus_curso B, campus C " .
     "WHERE A.ID_CURSO = '%s' " .
     "AND A.ID_CURSO = B.ID_CURSO " .
-    "AND B.ID_CAMPUS = C.ID_CAMPUS ", $param));
+    "AND B.ID_CAMPUS = C.ID_CAMPUS ".
+    "AND C.ID_CAMPUS = '%s' ", $arrayParams));
 
     return $cursos;
 }
@@ -170,11 +173,12 @@ function getCourseById($param) {
 function getCoursesBySearchParam($param) {
     global $wpdb;
 
-    $cursos = $wpdb->get_results("SELECT A.ID_CURSO as id_curso, C.ID_CAMPUS as id_campus " .
+    $cursos = $wpdb->get_results($wpdb->prepare(
+    "SELECT A.ID_CURSO as id_curso, C.ID_CAMPUS as id_campus " .
     "FROM curso A, campus_curso B, campus C " .
-    "WHERE A.DESCR LIKE '%$param%' " .
+    "WHERE A.DESCR LIKE '%s' " .
     "AND A.ID_CURSO = B.ID_CURSO " .
-    "AND B.ID_CAMPUS = C.ID_CAMPUS ");
+    "AND B.ID_CAMPUS = C.ID_CAMPUS ", $param));
 
     return $cursos;
 }

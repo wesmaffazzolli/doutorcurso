@@ -239,7 +239,7 @@
                             <div class="col-12">
                                 <div class="row no-gutter alinhamento">
                                     <div class="col-12">
-                                        <a href="/curso?c_id=<?php echo $curso->id_curso; ?>" class="btn btn-success fluid-size">TENHO INTERESSE</a>
+                                        <a href="/curso?c_id=<?php echo $curso->id_curso; ?>&cmp_id=<?php echo $curso->id_campus; ?>" class="btn btn-success fluid-size">TENHO INTERESSE</a>
                                     </div>
                                 </div>
                             </div>
