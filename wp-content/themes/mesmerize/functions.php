@@ -7,13 +7,14 @@
 
 /* =========== INÍCIO: FUNÇÕES DECLARADAS =============== */
 
-function getMediaEstrelas($idCurso, $numAvaliacoes) {
+function getMediaEstrelas($idCurso, $idCampus, $numAvaliacoes) {
     global $wpdb;
 
     if($numAvaliacoes != 0) {
         $query = "SELECT SUM(A.RECOMENDACAO_NPS) ".
                   "FROM avaliacao A ".
-                  "WHERE A.ID_CURSO = '{$idCurso}' ";
+                  "WHERE A.ID_CURSO = '{$idCurso}' ".
+                  "AND A.ID_CAMPUS = '{$idCampus}' ";
 
         $soma = $wpdb->get_var($query);
         $media = $soma/$numAvaliacoes;
@@ -45,12 +46,13 @@ global $wpdb;
 }
 
 
-function getAvaliacoesCurso($id_curso) {
+function getAvaliacoesCurso($id_curso, $id_campus) {
     global $wpdb;
 
     $query = "SELECT A.COMENTARIO as comentario, A.RECOMENDACAO_NPS as recomendacao, A.ID_USUARIO as id_usuario, A.DATA_HORA as data_hora ".
               "FROM avaliacao A ".
               "WHERE A.ID_CURSO = '{$id_curso}' ".
+              "AND A.ID_CAMPUS = '{$id_campus}' ".
               "ORDER BY A.DATA_HORA ASC ";
 
     return $wpdb->get_results($query);
@@ -71,7 +73,7 @@ function getIdUltimoPost() {
 
 function montaArrayAvaliacoes($post_id) {
 
-    $avaliacoesArray = array('QUALIDADE_PROFESSORES' => '', 'AULAS_PRATICAS' => '', 'ESTAGIO_PROJETOS' => '', 'CUSTO_BENEFICIO' => '', 'ESTRUTURA' => '', 'LABORATORIO_TECNOLOGIA' => '', 'SEGURANCA' => '', 'ATENDIMENTO' => '', 'RECOMENDACAO_NPS' => '', 'COMENTARIO' => '', 'ID_USUARIO' => '', 'ID_CURSO' => '');
+    $avaliacoesArray = array('QUALIDADE_PROFESSORES' => '', 'AULAS_PRATICAS' => '', 'ESTAGIO_PROJETOS' => '', 'CUSTO_BENEFICIO' => '', 'ESTRUTURA' => '', 'LABORATORIO_TECNOLOGIA' => '', 'SEGURANCA' => '', 'ATENDIMENTO' => '', 'RECOMENDACAO_NPS' => '', 'COMENTARIO' => '', 'ID_USUARIO' => '', 'ID_CURSO' => '', 'ID_CAMPUS' => '');
 
     foreach ($avaliacoesArray as $key => $value) {
         switch ($key) {
@@ -111,6 +113,9 @@ function montaArrayAvaliacoes($post_id) {
           case 'ID_CURSO':
           $avaliacoesArray[$key] = getAvaliacao($post_id, "_field_76");
             break;
+          case 'ID_CAMPUS':
+          $avaliacoesArray[$key] = getAvaliacao($post_id, "_field_79");
+            break;
 
           default:
             break;
@@ -127,15 +132,18 @@ function getAvaliacao($postId, $field) {
     return $result;
 }
 
-function calculaAvaliacoes($idCurso, $nomeColuna) {
+function calculaAvaliacoes($idCurso, $idCampus, $nomeColuna) {
     global $wpdb;
+
+    $arrayParams = array($idCurso, $idCampus);
 
     $soma = $wpdb->get_var($wpdb->prepare(
     "SELECT SUM({$nomeColuna}) as soma " .
     "FROM avaliacao A " .
-    "WHERE A.ID_CURSO = '%s' ", $idCurso));
+    "WHERE A.ID_CURSO = '%s' ".
+    "AND A.ID_CAMPUS = '%s' ", $arrayParams));
 
-    $num_avaliacoes = getNumAvaliacoes($idCurso);
+    $num_avaliacoes = getNumAvaliacoes($idCurso, $idCampus);
     if($num_avaliacoes != 0) {
         return ($soma/$num_avaliacoes);
     } else {
@@ -143,13 +151,16 @@ function calculaAvaliacoes($idCurso, $nomeColuna) {
     }
 }
 
-function getNumAvaliacoes($param) {
+function getNumAvaliacoes($id_curso, $id_campus) {
     global $wpdb;
+
+    $arrayParams = array($id_curso, $id_campus);
 
     $contagem = $wpdb->get_var($wpdb->prepare(
     "SELECT COUNT(*) as contagem " .
     "FROM avaliacao A " .
-    "WHERE A.ID_CURSO = '%s' ", $param));
+    "WHERE A.ID_CURSO = '%s' ".
+    "AND A.ID_CAMPUS = '%s' ", $arrayParams));
 
     return $contagem;
 }

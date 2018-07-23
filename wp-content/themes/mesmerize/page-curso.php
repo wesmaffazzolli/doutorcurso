@@ -11,7 +11,7 @@
             $paramIdCurso = $_GET['c_id'];
             $paramIdCampus = $_GET['cmp_id'];
             $cursos = getCourseById($paramIdCurso, $paramIdCampus);
-            $avaliacoes = getAvaliacoesCurso($paramIdCurso);
+            $avaliacoes = getAvaliacoesCurso($paramIdCurso, $paramIdCampus);
             setcookie("user_location", get_permalink()."?c_id=".$paramIdCurso."&cmp_id=".$paramIdCampus, time()+3600, "/", "localhost");
         } else {
             get_template_part( 'template-parts/content', 'none' );
@@ -253,8 +253,8 @@
                     <div class="card-block">                        
                         <div class="row titulo-indice">
                             <div class="col-12">
-                                <?php $num_avaliacoes = getNumAvaliacoes($curso->id_curso); 
-                                $media_estrelas = getMediaEstrelas($curso->id_curso, $num_avaliacoes); ?>
+                                <?php $num_avaliacoes = getNumAvaliacoes($curso->id_curso, $curso->id_campus); 
+                                $media_estrelas = getMediaEstrelas($curso->id_curso, $curso->id_campus, $num_avaliacoes); ?>
                                 <h4 class="titulo-avaliacoes">Índice de recomendação dos alunos:</h4>
 
                                 <?php 
@@ -282,7 +282,7 @@
                                         <p>Capacitação dos Professores:</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php $nota_qualidade_professores = calculaAvaliacoes($curso->id_curso, "QUALIDADE_PROFESSORES"); ?>
+                                        <?php $nota_qualidade_professores = calculaAvaliacoes($curso->id_curso, $curso->id_campus, "QUALIDADE_PROFESSORES"); ?>
                                         <?php if(!empty($nota_qualidade_professores)) { ?>
                                             <p><span class="badge badge-primary config-badge-curso"><?php echo number_format((float)$nota_qualidade_professores, 1, '.', ''); ?></span></p>    
                                         <?php } else { ?>
@@ -295,7 +295,7 @@
                                         <p>Aulas Práticas:</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php $nota_aulas_praticas = calculaAvaliacoes($curso->id_curso, "AULAS_PRATICAS"); ?>
+                                        <?php $nota_aulas_praticas = calculaAvaliacoes($curso->id_curso, $curso->id_campus, "AULAS_PRATICAS"); ?>
                                         <?php if(!empty($nota_aulas_praticas)) { ?>
                                             <p><span class="badge badge-primary config-badge-curso"><?php echo number_format((float)$nota_aulas_praticas, 1, '.', ''); ?></span></p>    
                                         <?php } else { ?>
@@ -308,7 +308,7 @@
                                         <p>Apoio para Projetos e/ou Estágios:</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php $nota_estagio_projetos = calculaAvaliacoes($curso->id_curso, "ESTAGIO_PROJETOS"); ?>
+                                        <?php $nota_estagio_projetos = calculaAvaliacoes($curso->id_curso, $curso->id_campus, "ESTAGIO_PROJETOS"); ?>
                                         <?php if(!empty($nota_estagio_projetos)) { ?>
                                             <p><span class="badge badge-primary config-badge-curso"><?php echo number_format((float)$nota_estagio_projetos, 1, '.', '');?></span></p>    
                                         <?php } else { ?>
@@ -321,7 +321,7 @@
                                         <p>Relação de Custos vs. Benefícios:</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php $nota_custos_beneficios = calculaAvaliacoes($curso->id_curso, "CUSTO_BENEFICIO"); ?>
+                                        <?php $nota_custos_beneficios = calculaAvaliacoes($curso->id_curso, $curso->id_campus, "CUSTO_BENEFICIO"); ?>
                                         <?php if(!empty($nota_custos_beneficios)) { ?>
                                             <p><span class="badge badge-primary config-badge-curso"><?php echo number_format((float)$nota_custos_beneficios, 1, '.', '');?></span></p>    
                                         <?php } else { ?>
@@ -337,7 +337,7 @@
                                         <p>Estrutura (salas de aula, biblioteca, wi-fi, etc):</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php $nota_estrutura = calculaAvaliacoes($curso->id_curso, "ESTRUTURA"); ?>
+                                        <?php $nota_estrutura = calculaAvaliacoes($curso->id_curso, $curso->id_campus, "ESTRUTURA"); ?>
                                         <?php if(!empty($nota_estrutura)) { ?>
                                             <p><span class="badge badge-primary config-badge-curso"><?php echo number_format((float)$nota_estrutura, 1, '.', ''); ?></span></p>    
                                         <?php } else { ?>
@@ -350,7 +350,7 @@
                                         <p>Qualidade dos Laboratórios e Tecnologia:</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php $nota_laboratorios_tecnologia = calculaAvaliacoes($curso->id_curso, "LABORATORIO_TECNOLOGIA"); ?>
+                                        <?php $nota_laboratorios_tecnologia = calculaAvaliacoes($curso->id_curso, $curso->id_campus, "LABORATORIO_TECNOLOGIA"); ?>
                                         <?php if(!empty($nota_laboratorios_tecnologia)) { ?>
                                             <p><span class="badge badge-primary config-badge-curso"><?php echo number_format((float)$nota_laboratorios_tecnologia, 1, '.', '');?></span></p>    
                                         <?php } else { ?>
@@ -363,7 +363,7 @@
                                         <p>Nível de Segurança para o Aluno:</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php $nota_seguranca_aluno = calculaAvaliacoes($curso->id_curso, "SEGURANCA"); ?>
+                                        <?php $nota_seguranca_aluno = calculaAvaliacoes($curso->id_curso, $curso->id_campus, "SEGURANCA"); ?>
                                         <?php if(!empty($nota_seguranca_aluno)) { ?>
                                             <p><span class="badge badge-primary config-badge-curso"><?php echo number_format((float)$nota_seguranca_aluno, 1, '.', ''); ?></span></p>    
                                         <?php } else { ?>
@@ -376,7 +376,7 @@
                                         <p>Qualidade de Atendimento ao Aluno:</p>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <?php $nota_qualidade_atendimento_aluno = calculaAvaliacoes($curso->id_curso, "ATENDIMENTO"); ?>
+                                        <?php $nota_qualidade_atendimento_aluno = calculaAvaliacoes($curso->id_curso, $curso->id_campus, "ATENDIMENTO"); ?>
                                         <?php if(!empty($nota_qualidade_atendimento_aluno)) { ?>
                                             <p><span class="badge badge-primary config-badge-curso"><?php echo number_format((float)$nota_qualidade_atendimento_aluno, 1, '.', ''); ?></span></p>    
                                         <?php } else { ?>
@@ -391,7 +391,7 @@
                         <div class="col-12">
                             <div class="row no-gutter alinhamento">
                                 <div class="col-12">
-                                    <a href="avaliar?c_id=<?php echo $curso->id_curso; ?>" class="btn btn-success fluid-size">AVALIAR CURSO</a>
+                                    <a href="avaliar?c_id=<?php echo $curso->id_curso; ?>&cmp_id=<?php echo $curso->id_campus; ?>" class="btn btn-success fluid-size">AVALIAR CURSO</a>
                                 </div>
                             </div>
                         </div>
@@ -406,7 +406,7 @@
 
                 <?php
 
-                $num_avaliacoes = getNumAvaliacoes($curso->id_curso);
+                $num_avaliacoes = getNumAvaliacoes($curso->id_curso, $curso->id_campus);
 
                 //echo $num_avaliacoes;
 
