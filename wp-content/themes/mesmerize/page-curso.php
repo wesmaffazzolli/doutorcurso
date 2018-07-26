@@ -12,7 +12,7 @@
             $paramIdCampus = $_GET['cmp_id'];
             $cursos = getCourseById($paramIdCurso, $paramIdCampus);
             $avaliacoes = getAvaliacoesCurso($paramIdCurso, $paramIdCampus);
-            setcookie("user_location", get_permalink()."?c_id=".$paramIdCurso."&cmp_id=".$paramIdCampus, time()+3600, "/", "localhost");
+            setcookie("user_location", get_permalink()."?c_id=".$paramIdCurso."&cmp_id=".$paramIdCampus, time()+3600, "/", "www.doutorcurso.com.br");
         } else {
             get_template_part( 'template-parts/content', 'none' );
         }

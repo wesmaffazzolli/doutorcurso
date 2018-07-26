@@ -64,7 +64,7 @@ function getIdUltimoPost() {
     $query = "SELECT A.ID ".
               "FROM wp_posts A, wp_postmeta B ".
               "WHERE A.POST_TYPE = 'nf_sub' ". 
-              "AND A.POST_DATE = (SELECT MAX(C.POST_DATE) FROM WP_POSTS C) ".
+              "AND A.POST_DATE = (SELECT MAX(C.POST_DATE) FROM wp_posts C) ".
               "AND A.ID = B.POST_ID ".
               "GROUP BY A.ID";
 
