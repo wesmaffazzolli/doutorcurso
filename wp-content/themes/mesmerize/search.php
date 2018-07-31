@@ -11,7 +11,7 @@
             <div class="col-12">
                 <form role="search" method="get" class="config-form-barra-pesquisa" action="<?php esc_url(home_url('/'))?>">
                     <!--<input type="search" class="config-direct-barra-pesquisa" value="<?php get_search_query() ?>" name="s" />-->
-                    <input type="search" class="config-direct-barra-pesquisa" placeholder="Digite aqui sua pesquisa..." value="<?php get_search_query() ?>" name="s" />
+                    <input type="search" class="config-direct-barra-pesquisa" placeholder="Digite aqui sua pesquisa..." value="<?php get_search_query() ?>" name="s" maxlength="50" />
                     <button type="submit" class="config-botao-barra-pesquisa">Pesquisar</button>
                 </form>
             </div>

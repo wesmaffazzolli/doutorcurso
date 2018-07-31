@@ -4,8 +4,16 @@
 	$cursos = array();
 
 	if(isset($_GET['s'])) {
-		$param = $_GET['s'];
+
+		$param = sanitize_text_field($_GET['s']);
+
+		if (strlen($param) > 50) {
+  			$param = substr($param, 0, 50);
+		}
+
 		$cursos = getCoursesBySearchParam($param);
+
+		//echo $param;
 	} else if($parent == 'graduacao' || $parent == 'pos-graducao' || $parent == 'mestrado' || $parent == 'doutorado') {
 		$slug = getPostSlug();
 		$cursos = getCoursesByNivelAndEscola($parent, $slug);

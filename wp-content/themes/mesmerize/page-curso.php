@@ -8,8 +8,8 @@
         global $wpdb;
 
         if(isset($_GET['c_id']) && isset($_GET['cmp_id'])) {
-            $paramIdCurso = $_GET['c_id'];
-            $paramIdCampus = $_GET['cmp_id'];
+            $paramIdCurso = sanitize_text_field($_GET['c_id']);
+            $paramIdCampus = sanitize_text_field($_GET['cmp_id']);
             $cursos = getCourseById($paramIdCurso, $paramIdCampus);
             $avaliacoes = getAvaliacoesCurso($paramIdCurso, $paramIdCampus);
             setcookie("user_location", get_permalink()."?c_id=".$paramIdCurso."&cmp_id=".$paramIdCampus, time()+3600, "/", "www.doutorcurso.com.br");

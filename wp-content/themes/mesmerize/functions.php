@@ -7,6 +7,16 @@
 
 /* =========== INÍCIO: FUNÇÕES DECLARADAS =============== */
 
+function getLikeEscaped($param) {
+    global $wpdb;
+
+    $param_esc = $wpdb->esc_like($param);
+    $param_esc = '%'.$param_esc.'%';
+
+    return $param_esc;
+
+}
+
 function getMediaEstrelas($idCurso, $idCampus, $numAvaliacoes) {
     global $wpdb;
 
@@ -49,13 +59,15 @@ global $wpdb;
 function getAvaliacoesCurso($id_curso, $id_campus) {
     global $wpdb;
 
+    $arrayParams = array($id_curso, $id_campus);
+
     $query = "SELECT A.COMENTARIO as comentario, A.RECOMENDACAO_NPS as recomendacao, A.ID_USUARIO as id_usuario, A.DATA_HORA as data_hora ".
               "FROM avaliacao A ".
-              "WHERE A.ID_CURSO = '{$id_curso}' ".
-              "AND A.ID_CAMPUS = '{$id_campus}' ".
+              "WHERE A.ID_CURSO = '%s' ".
+              "AND A.ID_CAMPUS = '%s' ".
               "ORDER BY A.DATA_HORA ASC ";
 
-    return $wpdb->get_results($query);
+    return $wpdb->get_results($wpdb->prepare($query, $arrayParams));
 }
 
 function getIdUltimoPost() {
@@ -154,6 +166,9 @@ function calculaAvaliacoes($idCurso, $idCampus, $nomeColuna) {
 function getNumAvaliacoes($id_curso, $id_campus) {
     global $wpdb;
 
+    $id_curso = $wpdb->_real_escape($id_curso);
+    $id_campus = $wpdb->_real_escape($id_campus);
+
     $arrayParams = array($id_curso, $id_campus);
 
     $contagem = $wpdb->get_var($wpdb->prepare(
@@ -167,6 +182,9 @@ function getNumAvaliacoes($id_curso, $id_campus) {
 
 function getCourseById($paramIdCurso, $paramIdCampus) {
     global $wpdb;
+
+    $paramIdCurso = $wpdb->_real_escape($paramIdCurso);
+    $paramIdCampus = $wpdb->_real_escape($paramIdCampus);
 
     $arrayParams = array($paramIdCurso, $paramIdCampus);
 
@@ -184,12 +202,16 @@ function getCourseById($paramIdCurso, $paramIdCampus) {
 function getCoursesBySearchParam($param) {
     global $wpdb;
 
+    $param = $wpdb->_real_escape($param);
+
+    $like = getLikeEscaped($param);
+
     $cursos = $wpdb->get_results($wpdb->prepare(
     "SELECT A.ID_CURSO as id_curso, C.ID_CAMPUS as id_campus " .
     "FROM curso A, campus_curso B, campus C " .
     "WHERE A.DESCR LIKE '%s' " .
     "AND A.ID_CURSO = B.ID_CURSO " .
-    "AND B.ID_CAMPUS = C.ID_CAMPUS ", $param));
+    "AND B.ID_CAMPUS = C.ID_CAMPUS ", $like));
 
     return $cursos;
 }
